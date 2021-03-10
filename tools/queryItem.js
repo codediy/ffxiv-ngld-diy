@@ -16,7 +16,6 @@ function getRegion(mapsData)
 {
     let regionIds = [];
     let regions = [];
-    objectForEach(mapsData,(k,e)=>{})
     for (const key in mapsData) {
         if (Object.hasOwnProperty.call(mapsData, key)) {
             const mapItem = mapsData[key];
@@ -30,7 +29,7 @@ function getRegion(mapsData)
 }
 
 /**
- * 
+ * 获取特定区域下的地图
  * @param {*} regionId 
  * @param [] mapsData 
  * @returns 
@@ -98,7 +97,6 @@ function testGetRegionMaps()
 {
     console.log(getRegionMaps(23,data.maps));
 }
-
 function testGetMapItem()
 {
     p(
@@ -110,4 +108,4 @@ function p(o) {
 }
 
 // testGetRegionMaps();
-testGetMapItem();
+// testGetMapItem();
