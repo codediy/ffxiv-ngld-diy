@@ -15,8 +15,9 @@
             padding: 0;
         }
         #app {
-            padding: 10px;
-            width: 100%;
+            width: 90%;
+            margin: 25px auto;
+            color: blueviolet;
         }
         #region-container,#item-container {
             width: 100%;
@@ -100,9 +101,9 @@
                                 v-for="item in itemList.list">
                                         <div class="cell">{{itemList.node.marker}}</div>
                                         <div class="cell">{{item.name}}</div>
-                                        <div class="cell">{{item.gather_level}}</div>
-                                        <div class="cell" v-if="itemList.node.job_category == 17">矿</div>
-                                        <div class="cell" v-if="itemList.node.job_category == 18">园</div>
+                                        <div class="cell" style="background-color: #ec789b;">{{item.gather_level}}</div>
+                                        <div class="cell" style="background-color: #c0e95f;" v-if="itemList.node.job_category == 17">矿</div>
+                                        <div class="cell" style="background-color: #60e2ac;" v-if="itemList.node.job_category == 18">园</div>
                                         <div class="cell">{{itemList.node.start_time}}出</div>
                                         <div class="cell" :class="{is_limit_bg:itemList.node.duration < 24}">{{itemList.node.duration}}时</div>
                                 </div>
@@ -246,6 +247,11 @@ let option = {
                 }
             }
             let result = items.slice(this.startHour,this.startHour+this.displayHourNums);
+            if(this.startHour + this.displayHourNums >= 24){ //截取前面一部分
+                let cha = this.startHour + this.displayHourNums - 24;
+                let paddingEl = items.slice(0,cha-1);
+                result = result.concat(paddingEl);
+            }
             return result;
         },
         
