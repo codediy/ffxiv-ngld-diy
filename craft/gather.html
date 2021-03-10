@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FFXIV采集时间表</title>
+    <!-- <script src="./js/vue.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script src="../data/Data.5.3.js"></script>
+    <style>
+        html body{
+            margin: 0;
+            padding: 0;
+        }
+        #app {
+            padding: 5px;
+        }
+        #app,#region-container,#item-container {
+            width: 100%;
+        }
+        .row-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .col-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .row-item {
+            flex:1;
+            padding: 3px;
+            align-items: center;
+            border: 1px solid black;
+            border-right: none;
+        }
+        .region_bg{
+            background-color: red;
+        }
+        .item-cell{
+            border-bottom:none ;
+        }
+        .region-item{
+            text-align: center;
+        }
+        .region-item:last-child,.item-cell:last-child{
+            border-right:1px solid black;
+        }
+        .item-cell-container:last-child{
+            border-bottom:1px solid black;
+        }
+        .cell-container{
+            flex-wrap: wrap;
+        }
+        .cell{
+            flex-basis:content;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="col-container" >
+        <div class="row-container region-tab">
+            <!-- 区域tab -->
+            <div class="row-item region-item" 
+                v-for="item  in regions" 
+                :key="item.region_id" 
+                :class="{region_bg:item.region_id == regionId}"
+                v-on:click="changeRegion(item.region_id)">
+                {{item.region_name}}
+            </div>
+        </div>
+        
+        <!-- 矿物table -->
+        <div class="col-container" style="margin-top: 10px;">
+            <!-- 24小时 -->
+            <div class="row-container">
+                <div class="row-item item-cell" style="text-align: center;">{{regionName}}-采集时间分布</div>
+                <div class="row-item item-cell" style="text-align: center;" v-for="i in displayHourNums">{{startHour + i}}</div>
+            </div>
+            <!-- 地图矿物 -->
+            <div class="col-container">
+                <div class="item-cell-container row-container"  v-for="mapItem in getRegionMaps()">
+                    <!-- 地图 -->
+                    <div class="row-item item-cell" style="text-align: center;vertical-align:center;">{{mapItem.name}}</div>
+                    <!-- 矿物 -->
+                    <div class="row-item item-cell col-container" v-for="i in displayHourNums"> 
+                        <div  class="col-container" v-for="mapHourItems in getMapItems(mapItem.id,startHour + i)">
+                            <div class="col-container" v-for="itemList in mapHourItems">
+                                <div class="row-container cell-container" style="
+                                border-bottom: gray 1px solid;" v-for="item in itemList.list">
+                                    <div class="cell">{{itemList.node.level}}</div>
+                                    <div class="cell">{{item.name}}</div>
+                                    <div class="cell" v-if="itemList.node.job_category == 17">矿</div>
+                                    <div class="cell" v-if="itemList.node.job_category == 18">园</div>
+                                    <div class="cell">{{itemList.node.marker}}</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+let option = {
+    data:{
+        regions:[],//区域列表
+        regionId:0, //区域id
+        regionName:"地区",
+        currentHour:0,//内部时间
+        startHour:0,//开始小时
+        displayHourNums:6,//显示的小时个数
+        maxHour:24,//最大小时
+        ffdata:{},
+    },
+    created(){
+        this.ffdata = window.ffdata;
+        this.getRegion();
+    },
+    methods:{
+        //读取区域信息
+        getRegion(){
+            let mapsData = this.ffdata.maps;
+            let regionIds = [];
+            let regions = [];
+            for (const key in mapsData) {
+                if (Object.hasOwnProperty.call(mapsData, key)) {
+                    const mapItem = mapsData[key];
+                    if(regionIds.indexOf(mapItem.region_id) < 0){
+                        regionIds.push(mapItem.region_id);
+                        regions.push({region_id:mapItem.region_id,region_name:mapItem.region_name});
+                    }
+                }
+            }
+            this.regions = regions
+            this.regionId = regions.length > 0 ? regions[regions.length-1]["region_id"] : 0;
+            this.regionName = regions.length > 0 ? regions[regions.length-1]["region_name"] :"地区";
+        },
+        //读取特定区域下的地图
+        getRegionMaps(){
+            let regionId = this.regionId;
+            let mapsData = this.ffdata.maps;
+
+            let maps = [];
+            for (const key in mapsData) {
+                if (Object.hasOwnProperty.call(mapsData, key)) {
+                    const mapItem = mapsData[key];
+                    if(mapItem.region_id == regionId){
+                        maps.push({
+                            id:mapItem.id,
+                            name:mapItem.place_name
+                        });
+                    }
+                }
+            }
+            return maps;
+        },
+        //读取地图的资源信息
+        getMapItems(mapId,hour){
+            let items = [
+                [],[],[],[],[],[],[],[],[],[],[],[],
+                [],[],[],[],[],[],[],[],[],[],[],[],
+            ];
+            let nodes = this.ffdata.nodes;
+            let nodeItems = this.ffdata.node_items;
+            let itemAttrs = this.ffdata.item_attributes;
+
+            //读取地图的采矿点
+            for (const nodeK in nodes) {
+                if (Object.hasOwnProperty.call(nodes, nodeK)) {
+                    const tempNode = nodes[nodeK];
+                    if(tempNode.map_id == mapId && tempNode.start_time == hour){
+                        //读取采矿点的矿物
+                        let tempNodeItem = [];
+                        const tempItems = nodeItems[tempNode.id];
+                        for (const hiddenItem of tempItems["hidden"]) {
+                            tempNodeItem.push(itemAttrs[hiddenItem["item_id"]]);
+                        }
+                        for (const listItem of tempItems["list"]) {
+                            tempNodeItem.push(itemAttrs[listItem["item_id"]]);
+                        }
+                        items[tempNode.start_time].push({
+                            node:tempNode,
+                            list:tempNodeItem,
+                        });
+                    }
+                }
+            }
+            return items.slice(this.startHour,this.startHour+this.displayHourNums);
+        },
+
+        changeRegion(rid){
+            this.regionId = rid;
+            this.regionName = this.regions.find(d => d.region_id == rid)["region_name"];
+        }
+    }
+};
+new Vue({
+  el: '#app',
+  ...option
+});   
+</script>
+</html>
