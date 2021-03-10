@@ -6,6 +6,7 @@
     <title>FFXIV采集时间表</title>
     <!-- <script src="./js/vue.min.js"></script> -->
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@thewakingsands/kit-tooltip/dist/bundle.js"></script>
     <script type="text/javascript" src="./js/common.js"></script>
     <script src="../data/Data.5.3.js"></script>
     <style>
@@ -38,9 +39,10 @@
             border: 1px solid black;
             border-right: none;
         }
-        .region_bg{
+        .region_bg, .is_limit_bg{
             background-color: red;
         }
+
         .item-cell{
             border-bottom:none ;
         }
@@ -93,15 +95,16 @@
                     <div class="row-item item-cell col-container" v-for="i in displayHourNums"> 
                         <div  class="col-container" v-for="mapHourItems in getMapItems(mapItem.id,startHour + i - 1)">
                             <div class="col-container" v-for="itemList in mapHourItems">
-                                <div class="row-container cell-container" style="
-                                    border-bottom: gray 1px solid;" v-for="item in itemList.list">
+                                <div class="row-container cell-container" 
+                                style="border-bottom: gray 1px solid;" 
+                                v-for="item in itemList.list">
                                         <div class="cell">{{itemList.node.marker}}</div>
                                         <div class="cell">{{item.name}}</div>
                                         <div class="cell">{{item.gather_level}}</div>
                                         <div class="cell" v-if="itemList.node.job_category == 17">矿</div>
                                         <div class="cell" v-if="itemList.node.job_category == 18">园</div>
                                         <div class="cell">{{itemList.node.start_time}}出</div>
-                                        <div class="cell">{{itemList.node.duration}}时</div>
+                                        <div class="cell" :class="{is_limit_bg:itemList.node.duration < 24}">{{itemList.node.duration}}时</div>
                                 </div>
                             </div>
                         </div>
@@ -115,6 +118,7 @@
 <script>
 let option = {
     data:{
+        isShowAll:false,//是否先杀24小时在的
         regions:[],//区域列表
         regionId:0, //区域id
         regionName:"地区",
@@ -195,11 +199,10 @@ let option = {
             for (const nodeK in nodes) {
                 if (Object.hasOwnProperty.call(nodes, nodeK) ) {
                     const tempNode = nodes[nodeK];
-                    if(tempNode.duration < 24){ //24常驻忽略
+                    if(tempNode.duration < 24){ //
                         //解析出现时间
                         let showStartTime = tempNode.start_time;
                         let showEndTime = tempNode.start_time + tempNode.duration - 1;
-
                         if(tempNode.map_id == mapId && hour >= showStartTime && hour <= showEndTime ){
                             //读取采矿点的矿物
                             let tempNodeItem = [];
@@ -214,15 +217,31 @@ let option = {
                                 node:tempNode,
                                 list:tempNodeItem,
                             }
-                            let tempHour = tempNode.start_time;
-                            if(tempHour >= 24){
-                                tempHour = tempHour - 24;
-                            }
-                            items[tempHour].push({
+                            items[hour].push({
                                 node:tempNode,
                                 list:tempNodeItem,
                             });
                         }
+                    }else if(this.isShowAll && tempNode.duration == 24){ //24常驻
+                        if(tempNode.map_id == mapId){
+                            //读取采矿点的矿物
+                            let tempNodeItem = [];
+                            const tempItems = nodeItems[tempNode.id];
+                            for (const hiddenItem of tempItems["hidden"]) {
+                                tempNodeItem.push(itemAttrs[hiddenItem["item_id"]]);
+                            }
+                            for (const listItem of tempItems["list"]) {
+                                tempNodeItem.push(itemAttrs[listItem["item_id"]]);
+                            }
+                            let tempInfo = {
+                                node:tempNode,
+                                list:tempNodeItem,
+                            }
+                            items[hour].push({
+                                node:tempNode,
+                                list:tempNodeItem,
+                            });
+                        }   
                     }
                 }
             }
