@@ -129,9 +129,9 @@ let option = {
         this.ffdata = window.ffdata;
         this.getRegion();
         this.getET();
-        // setInterval(()=>{
-        //     this.getET();
-        // },1000);
+        setInterval(()=>{
+            this.getET();
+        },1000);
     },
     methods:{
         //读取区域信息
