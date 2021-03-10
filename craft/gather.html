@@ -72,13 +72,15 @@
                 {{item.region_name}}
             </div>
         </div>
-        
         <!-- 矿物table -->
         <div class="col-container" style="margin-top: 10px;">
             <!-- 24小时 -->
             <div class="row-container">
-                <div class="row-item item-cell" style="text-align: center;">{{regionName}}-采集时间分布</div>
-                <div class="row-item item-cell" style="text-align: center;" v-for="i in displayHourNums">{{startHour + i}}</div>
+                <div class="row-item item-cell" style="text-align: center;">{{regionName}}-采集分布{{currentHour}}:{{currentMinute}}</div>
+                <div class="row-item item-cell" style="text-align: center;" v-for="i in displayHourNums">
+                    <div v-if="i == 1" >{{startHour + i - 1}}</div>
+                    <div v-if="i > 1">{{startHour + i - 1}}</div>
+                </div>
             </div>
             <!-- 地图矿物 -->
             <div class="col-container">
@@ -87,7 +89,7 @@
                     <div class="row-item item-cell" style="text-align: center;vertical-align:center;">{{mapItem.name}}</div>
                     <!-- 矿物 -->
                     <div class="row-item item-cell col-container" v-for="i in displayHourNums"> 
-                        <div  class="col-container" v-for="mapHourItems in getMapItems(mapItem.id,startHour + i)">
+                        <div  class="col-container" v-for="mapHourItems in getMapItems(mapItem.id,startHour + i - 1)">
                             <div class="col-container" v-for="itemList in mapHourItems">
                                 <div class="row-container cell-container" style="
                                 border-bottom: gray 1px solid;" v-for="item in itemList.list">
@@ -112,7 +114,8 @@ let option = {
         regions:[],//区域列表
         regionId:0, //区域id
         regionName:"地区",
-        currentHour:0,//内部时间
+        currentHour:0,//内部小时
+        currentMinute:0,//内部分钟
         startHour:0,//开始小时
         displayHourNums:6,//显示的小时个数
         maxHour:24,//最大小时
@@ -121,6 +124,10 @@ let option = {
     created(){
         this.ffdata = window.ffdata;
         this.getRegion();
+        this.getET();
+        setInterval(()=>{
+            this.getET();
+        },1000);
     },
     methods:{
         //读取区域信息
@@ -140,6 +147,16 @@ let option = {
             this.regions = regions
             this.regionId = regions.length > 0 ? regions[regions.length-1]["region_id"] : 0;
             this.regionName = regions.length > 0 ? regions[regions.length-1]["region_name"] :"地区";
+        },
+        getET(){
+            let localEpoch = (new Date()).getTime();
+            let epoch = localEpoch * 20.571428571428573;
+            let minutes = parseInt((epoch / (1000 * 60)) % 60);
+            let hours = parseInt((epoch / (1000 * 60 * 60)) % 24);
+            console.log("h-m",hours,minutes);
+            this.currentHour = hours;
+            this.currentMinute = minutes;
+            this.startHour = hours;
         },
         //读取特定区域下的地图
         getRegionMaps(){
@@ -193,7 +210,7 @@ let option = {
             }
             return items.slice(this.startHour,this.startHour+this.displayHourNums);
         },
-
+        
         changeRegion(rid){
             this.regionId = rid;
             this.regionName = this.regions.find(d => d.region_id == rid)["region_name"];
