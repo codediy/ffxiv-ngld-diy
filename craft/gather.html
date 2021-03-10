@@ -6,6 +6,7 @@
     <title>FFXIV采集时间表</title>
     <!-- <script src="./js/vue.min.js"></script> -->
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
     <script src="../data/Data.5.3.js"></script>
     <style>
         html body{
@@ -13,9 +14,10 @@
             padding: 0;
         }
         #app {
-            padding: 5px;
+            padding: 10px;
+            width: 100%;
         }
-        #app,#region-container,#item-container {
+        #region-container,#item-container {
             width: 100%;
         }
         .row-container {
@@ -78,8 +80,8 @@
             <div class="row-container">
                 <div class="row-item item-cell" style="text-align: center;">{{regionName}}-采集分布{{currentHour}}:{{currentMinute}}</div>
                 <div class="row-item item-cell" style="text-align: center;" v-for="i in displayHourNums">
-                    <div v-if="i == 1" >{{startHour + i - 1}}</div>
-                    <div v-if="i > 1">{{startHour + i - 1}}</div>
+                    <div v-if="i == 1" >{{startHour + i - 1 >= 24 ? startHour + i - 1 - 24 :startHour + i - 1}}</div>
+                    <div v-if="i > 1">{{startHour + i - 1 >= 24 ? startHour + i - 1 - 24 :startHour + i - 1}}</div>
                 </div>
             </div>
             <!-- 地图矿物 -->
@@ -92,17 +94,19 @@
                         <div  class="col-container" v-for="mapHourItems in getMapItems(mapItem.id,startHour + i - 1)">
                             <div class="col-container" v-for="itemList in mapHourItems">
                                 <div class="row-container cell-container" style="
-                                border-bottom: gray 1px solid;" v-for="item in itemList.list">
-                                    <div class="cell">{{itemList.node.level}}</div>
-                                    <div class="cell">{{item.name}}</div>
-                                    <div class="cell" v-if="itemList.node.job_category == 17">矿</div>
-                                    <div class="cell" v-if="itemList.node.job_category == 18">园</div>
-                                    <div class="cell">{{itemList.node.marker}}</div>
+                                    border-bottom: gray 1px solid;" v-for="item in itemList.list">
+                                        <div class="cell">{{itemList.node.marker}}</div>
+                                        <div class="cell">{{item.name}}</div>
+                                        <div class="cell">{{item.gather_level}}</div>
+                                        <div class="cell" v-if="itemList.node.job_category == 17">矿</div>
+                                        <div class="cell" v-if="itemList.node.job_category == 18">园</div>
+                                        <div class="cell">{{itemList.node.start_time}}出</div>
+                                        <div class="cell">{{itemList.node.duration}}时</div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -125,9 +129,9 @@ let option = {
         this.ffdata = window.ffdata;
         this.getRegion();
         this.getET();
-        setInterval(()=>{
-            this.getET();
-        },1000);
+        // setInterval(()=>{
+        //     this.getET();
+        // },1000);
     },
     methods:{
         //读取区域信息
@@ -153,7 +157,7 @@ let option = {
             let epoch = localEpoch * 20.571428571428573;
             let minutes = parseInt((epoch / (1000 * 60)) % 60);
             let hours = parseInt((epoch / (1000 * 60 * 60)) % 24);
-            console.log("h-m",hours,minutes);
+            // console.log("h-m",hours,minutes);
             this.currentHour = hours;
             this.currentMinute = minutes;
             this.startHour = hours;
@@ -189,26 +193,41 @@ let option = {
 
             //读取地图的采矿点
             for (const nodeK in nodes) {
-                if (Object.hasOwnProperty.call(nodes, nodeK)) {
+                if (Object.hasOwnProperty.call(nodes, nodeK) ) {
                     const tempNode = nodes[nodeK];
-                    if(tempNode.map_id == mapId && tempNode.start_time == hour){
-                        //读取采矿点的矿物
-                        let tempNodeItem = [];
-                        const tempItems = nodeItems[tempNode.id];
-                        for (const hiddenItem of tempItems["hidden"]) {
-                            tempNodeItem.push(itemAttrs[hiddenItem["item_id"]]);
+                    if(tempNode.duration < 24){ //24常驻忽略
+                        //解析出现时间
+                        let showStartTime = tempNode.start_time;
+                        let showEndTime = tempNode.start_time + tempNode.duration - 1;
+
+                        if(tempNode.map_id == mapId && hour >= showStartTime && hour <= showEndTime ){
+                            //读取采矿点的矿物
+                            let tempNodeItem = [];
+                            const tempItems = nodeItems[tempNode.id];
+                            for (const hiddenItem of tempItems["hidden"]) {
+                                tempNodeItem.push(itemAttrs[hiddenItem["item_id"]]);
+                            }
+                            for (const listItem of tempItems["list"]) {
+                                tempNodeItem.push(itemAttrs[listItem["item_id"]]);
+                            }
+                            let tempInfo = {
+                                node:tempNode,
+                                list:tempNodeItem,
+                            }
+                            let tempHour = tempNode.start_time;
+                            if(tempHour >= 24){
+                                tempHour = tempHour - 24;
+                            }
+                            items[tempHour].push({
+                                node:tempNode,
+                                list:tempNodeItem,
+                            });
                         }
-                        for (const listItem of tempItems["list"]) {
-                            tempNodeItem.push(itemAttrs[listItem["item_id"]]);
-                        }
-                        items[tempNode.start_time].push({
-                            node:tempNode,
-                            list:tempNodeItem,
-                        });
                     }
                 }
             }
-            return items.slice(this.startHour,this.startHour+this.displayHourNums);
+            let result = items.slice(this.startHour,this.startHour+this.displayHourNums);
+            return result;
         },
         
         changeRegion(rid){
