@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FFXIV采集时间表</title>
     <!-- <script src="./js/vue.min.js"></script> -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@thewakingsands/kit-tooltip/dist/bundle.js"></script>
-    <script type="text/javascript" src="./js/common.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/axios.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/jq.js"></script>
-    <script src="../data/Data.5.3.js"></script>
-    <script src="../data/collects.js"></script>
+    
     <style>
         html body{
             margin: 0;
@@ -125,9 +124,30 @@
         </div>
     </div>
 </body>
+
+<script src="../data/Data.5.3.js"></script>
+<script src="../data/collects.js"></script>
 <script>
+function getItemPrice(dc,ids)
+{
+    let baseUrl = "https://universalis.app/api/";
+    baseUrl = baseUrl + dc +"/"+ids;
+    //缓存id价格信息
+
+    axios.get(baseUrl)
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
+// getItemPrice("LuXingNiao","29976,4");
+
 let option = {
     data:{
+        dcName:"LuXingNiao",
         isShowAll:false,//是否先杀24小时在的
         regions:[],//区域列表
         collectRewards:[],//收藏品奖励
