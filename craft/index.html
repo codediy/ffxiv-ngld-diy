@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/jq.js"></script>
+    <style>
+        * {
+            font-family: "Meiryo";
+            font-size: 12px;
+        }
+        body, html {
+            margin: 0;
+        }
+        html {
+            height: 100%;
+            overflow: hidden;
+            
+        }
+        table{
+            border-collapse: collapse;
+            table-layout: fixed;
+            color: #d84848;
+            font-weight: bold;
+        }
+        tr {
+            height: 80px;    
+        }
+        td {
+            border: 1px solid #000000;
+        }
+        .current-hour-bg {
+            background-color:#d84848;
+        }
+        #time-container {
+            text-align: center;
+            height: 30px;
+        }
+        #item-container .map-item{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 100%">
+        <tr id="time-container">
+        </tr>
+        <tbody id="item-container">
+
+        </tbody>
+    </table>
+</body>
+<script>
+let craftApp = {
+    config:{
+        maxH:24, //最大小时
+        currentH:0,//当前小时
+        startH:0, //开始小时
+        displayHours:3, //行最多显示12小时内
+        /**
+         * {
+         *   mapId:0,
+         *   mapName:"测试地图"
+         * }
+         * */
+        maps:[], //地图数组
+        /**
+         * 三维维数组 [[第一行[第一列多个矿物]],[第二行],[第三行]]
+         * items 传入24小时内的地图的矿物数据
+         * 根据displayHours截取部分数据填充
+         **/
+        items:[],
+    },
+    init:function(){
+        craftApp.startRender();
+    },
+    startRender()
+    {
+        craftApp.displayTimeContaienr();
+        craftApp.displayItemCOntainer();
+        setTimeout(function(){
+            craftApp.setClick();
+        },1);
+    },
+    setClick()
+    {   
+        $(".item-cell").hover(function(ev){
+            console.log($(this).attr("item-id"));
+        });  
+    },
+    setCurrentH:function(current)
+    {   
+        if(current > 0 && current < 24){
+            craftApp.config.currentH = current;
+        }else{
+            craftApp.config.currentH = 0;
+        }
+    },
+    setStartH:function(start)
+    {   
+        if(start > 0 && start < 24){
+            craftApp.config.startH = start;
+        }else{
+            craftApp.config.startH = 0;
+        }
+    },
+    setDisplayHours:function(hourNum)
+    {
+        craftApp.config.displayHours = hourNum;
+    },
+    setMaps:function(maps)
+    {
+        craftApp.config.maps = maps;
+    },
+    setItems:function(items)
+    {
+        craftApp.config.items = items;
+    },
+    displayTimeContaienr:function()
+    {
+        let timeString = "<td>地图/时间</td>";   
+        let tempH = craftApp.config.startH;
+        for(let i = 0 ;i < craftApp.config.displayHours;i++)
+        {
+            timeString += "<td class='";
+            //背景色调整
+            if(craftApp.config.startH + i == craftApp.config.currentH){
+                timeString +=  "current-hour-bg";
+            }
+            timeString += "'>";
+            timeString += tempH;
+            timeString += "</td>";
+
+            tempH = tempH + 1;
+            if(tempH >=  craftApp.config.maxH){
+                tempH = 0;
+            }
+        }
+        $("#time-container").html(timeString);
+    },
+    displayItemCOntainer:function()
+    {   
+        let itemString = "";
+        if(craftApp.config.maps.length > 0
+        && craftApp.config.items.length > 0){
+            for(let i = 0; i< craftApp.config.maps.length;i++) { //行
+                itemString += "<tr>";
+                //地图名
+                itemString += "<td class='map-item' map-id='";
+                itemString += craftApp.config.maps[i]["id"];
+                itemString +="'>";
+                itemString += craftApp.config.maps[i]["name"];
+                itemString += "</td>";
+                //矿物
+                for(let j = 0;j< craftApp.config.displayHours;j++){
+                    itemString += "<td style='vertical-align: top;'>";
+                    let tempH = craftApp.config.startH + j;
+                    // console.log("item..",craftApp.config.startH,j,tempH,craftApp.config.items[tempH]);
+                    itemString += craftApp.getItemEl(craftApp.config.items[i][tempH]);
+                    itemString += "</td>";
+                }
+                itemString += "</tr>";
+            }
+        }else{
+            console.log("maps or items error")
+        }
+        $("#item-container").html(itemString);
+    },
+    getItemEl:function(items)
+    {
+        console.log("getEL..",items)
+        let itemString = "";
+        if(items.length > 0){
+            for(let i = 0; i < items.length;i++){
+                itemString += "<div class='item-cell' style='font-size:80%;display:inline-block;padding:3px;margin:3px;' item-id='";
+                itemString += items[i]["id"];
+                itemString +="'>";
+                itemString += items[i]["name"];
+                itemString += "</div>";
+            }
+        }
+        return itemString;
+    }
+}
+let testMaps = [
+    {
+        id:0,
+        name:"雷"
+    },
+    {
+        id:1,
+        name:"森"
+    },
+    {
+        id:2,
+        name:"岛"
+    },
+    {
+        id:3,
+        name:"伊"
+    },
+    {
+        id:4,
+        name:"海"
+    },
+];
+
+let testItems = [
+    [
+        [
+          {id:0,name:"矿物0"},
+          {id:1,name:"矿物1"},
+          {id:2,name:"矿物2"},
+          {id:3,name:"矿物3"},
+        ],
+        [
+          {id:0,name:"矿物10"},
+          {id:1,name:"矿物11"},
+          {id:2,name:"矿物12"},
+          {id:3,name:"矿物13"},
+        ],
+        [
+          {id:0,name:"矿物20"},
+          {id:1,name:"矿物21"},
+          {id:2,name:"矿物22"},
+          {id:3,name:"矿物23"},
+        ],
+        [
+          {id:0,name:"矿物30"},
+          {id:1,name:"矿物31"},
+          {id:2,name:"矿物32"},
+          {id:3,name:"矿物33"},
+        ],
+        [
+          {id:0,name:"矿物40"},
+          {id:1,name:"矿物41"},
+          {id:2,name:"矿物42"},
+          {id:3,name:"矿物43"},
+        ],
+        [
+          {id:0,name:"矿物50"},
+          {id:1,name:"矿物51"},
+          {id:2,name:"矿物52"},
+          {id:3,name:"矿物53"},
+        ],
+    ],
+    [
+        [ 
+          {id:0,name:"矿物0"},
+          {id:1,name:"矿物1"},
+          {id:2,name:"矿物2"},
+          {id:3,name:"矿物3"},
+        ],
+        [
+          {id:0,name:"矿物10"},
+          {id:1,name:"矿物11"},
+          {id:2,name:"矿物12"},
+          {id:3,name:"矿物13"},
+        ],
+        [
+          {id:0,name:"矿物20"},
+          {id:1,name:"矿物21"},
+          {id:2,name:"矿物22"},
+          {id:3,name:"矿物23"},
+        ],
+        [
+          {id:0,name:"矿物30"},
+          {id:1,name:"矿物31"},
+          {id:2,name:"矿物32"},
+          {id:3,name:"矿物33"},
+        ],
+        [
+          {id:0,name:"矿物40"},
+          {id:1,name:"矿物41"},
+          {id:2,name:"矿物42"},
+          {id:3,name:"矿物43"},
+        ],
+        [
+          {id:0,name:"矿物50"},
+          {id:1,name:"矿物51"},
+          {id:2,name:"矿物52"},
+          {id:3,name:"矿物53"},
+        ],
+    ],
+    [
+        [ 
+          {id:0,name:"矿物0"},
+          {id:1,name:"矿物1"},
+          {id:2,name:"矿物2"},
+          {id:3,name:"矿物3"},
+        ],
+        [
+          {id:0,name:"矿物10"},
+          {id:1,name:"矿物11"},
+          {id:2,name:"矿物12"},
+          {id:3,name:"矿物13"},
+        ],
+        [
+          {id:0,name:"矿物20"},
+          {id:1,name:"矿物21"},
+          {id:2,name:"矿物22"},
+          {id:3,name:"矿物23"},
+        ],
+        [
+          {id:0,name:"矿物30"},
+          {id:1,name:"矿物31"},
+          {id:2,name:"矿物32"},
+          {id:3,name:"矿物33"},
+        ],
+        [
+          {id:0,name:"矿物40"},
+          {id:1,name:"矿物41"},
+          {id:2,name:"矿物42"},
+          {id:3,name:"矿物43"},
+        ],
+        [
+          {id:0,name:"矿物50"},
+          {id:1,name:"矿物51"},
+          {id:2,name:"矿物52"},
+          {id:3,name:"矿物53"},
+        ],
+    ],
+    [
+        [
+          {id:0,name:"矿物0"},
+          {id:1,name:"矿物1"},
+          {id:2,name:"矿物2"},
+          {id:3,name:"矿物3"},
+        ],
+        [
+          {id:0,name:"矿物10"},
+          {id:1,name:"矿物11"},
+          {id:2,name:"矿物12"},
+          {id:3,name:"矿物13"},
+        ],
+        [
+          {id:0,name:"矿物20"},
+          {id:1,name:"矿物21"},
+          {id:2,name:"矿物22"},
+          {id:3,name:"矿物23"},
+        ],
+        [
+          {id:0,name:"矿物30"},
+          {id:1,name:"矿物31"},
+          {id:2,name:"矿物32"},
+          {id:3,name:"矿物33"},
+        ],
+        [
+          {id:0,name:"矿物40"},
+          {id:1,name:"矿物41"},
+          {id:2,name:"矿物42"},
+          {id:3,name:"矿物43"},
+        ],
+        [
+          {id:0,name:"矿物50"},
+          {id:1,name:"矿物51"},
+          {id:2,name:"矿物52"},
+          {id:3,name:"矿物53"},
+        ],
+    ],
+    [
+        [ 
+          {id:0,name:"矿物0"},
+          {id:1,name:"矿物1"},
+          {id:2,name:"矿物2"},
+          {id:3,name:"矿物3"},
+        ],
+        [
+          {id:0,name:"矿物10"},
+          {id:1,name:"矿物11"},
+          {id:2,name:"矿物12"},
+          {id:3,name:"矿物13"},
+        ],
+        [
+          {id:0,name:"矿物20"},
+          {id:1,name:"矿物21"},
+          {id:2,name:"矿物22"},
+          {id:3,name:"矿物23"},
+        ],
+        [
+          {id:0,name:"矿物30"},
+          {id:1,name:"矿物31"},
+          {id:2,name:"矿物32"},
+          {id:3,name:"矿物33"},
+        ],
+        [
+          {id:0,name:"矿物40"},
+          {id:1,name:"矿物41"},
+          {id:2,name:"矿物42"},
+          {id:3,name:"矿物43"},
+        ],
+        [
+          {id:0,name:"矿物50"},
+          {id:1,name:"矿物51"},
+          {id:2,name:"矿物52"},
+          {id:3,name:"矿物53"},
+        ],
+    ],
+    [
+        [ 
+          {id:0,name:"矿物0"},
+          {id:1,name:"矿物1"},
+          {id:2,name:"矿物2"},
+          {id:3,name:"矿物3"},
+        ],
+        [
+          {id:0,name:"矿物10"},
+          {id:1,name:"矿物11"},
+          {id:2,name:"矿物12"},
+          {id:3,name:"矿物13"},
+        ],
+        [
+          {id:0,name:"矿物20"},
+          {id:1,name:"矿物21"},
+          {id:2,name:"矿物22"},
+          {id:3,name:"矿物23"},
+        ],
+        [
+          {id:0,name:"矿物30"},
+          {id:1,name:"矿物31"},
+          {id:2,name:"矿物32"},
+          {id:3,name:"矿物33"},
+        ],
+        [
+          {id:0,name:"矿物40"},
+          {id:1,name:"矿物41"},
+          {id:2,name:"矿物42"},
+          {id:3,name:"矿物43"},
+        ],
+        [
+          {id:0,name:"矿物50"},
+          {id:1,name:"矿物51"},
+          {id:2,name:"矿物52"},
+          {id:3,name:"矿物53"},
+        ],
+    ],
+]
+
+craftApp.setMaps(testMaps);
+craftApp.setItems(testItems);
+craftApp.init();
+
+
+</script>
+</html>
