@@ -106,8 +106,8 @@
                                 style="border-bottom: gray 1px solid;" 
                                 v-for="item in itemList.list">
                                         <div class="cell">{{itemList.node.marker}}</div>
+                                        <div class="cell">~{{item.gather_level}}~</div>
                                         <div class="cell">{{item.name}}</div>
-                                        <div class="cell">{{item.gather_level}}</div>
                                         <div class="cell" style="background-color: #9096ec;" v-if="itemList.node.job_category == 17">矿</div>
                                         <div class="cell" style="background-color: #58ebae;" v-if="itemList.node.job_category == 18">园</div>
                                         <div class="cell" style="background-color: #75b6db;" v-if="item.reward && item.reward.reward == 25200">{{item.reward.high.scrip}}白</div>
@@ -136,7 +136,7 @@ let option = {
         currentHour:0,//内部小时
         currentMinute:0,//内部分钟
         startHour:0,//开始小时
-        displayHourNums:12,//显示的小时个数
+        displayHourNums:6,//显示的小时个数
         maxHour:24,//最大小时
         ffdata:{},
     },
