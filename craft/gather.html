@@ -108,9 +108,9 @@
                                         <div class="cell">{{itemList.node.marker}}</div>
                                         <div class="cell">{{item.name}}</div>
                                         <div class="cell">{{item.gather_level}}</div>
-                                        <div class="cell" style="background-color: #7b82e7;" v-if="itemList.node.job_category == 17">矿</div>
+                                        <div class="cell" style="background-color: #9096ec;" v-if="itemList.node.job_category == 17">矿</div>
                                         <div class="cell" style="background-color: #58ebae;" v-if="itemList.node.job_category == 18">园</div>
-                                        <div class="cell" style="background-color: #57563f;" v-if="item.reward && item.reward.reward == 17833">{{item.reward.high.scrip}}白</div>
+                                        <div class="cell" style="background-color: #75b6db;" v-if="item.reward && item.reward.reward == 25200">{{item.reward.high.scrip}}白</div>
                                         <div class="cell" style="background-color: #c2db53;" v-if="item.reward && item.reward.reward == 17834">{{item.reward.high.scrip}}黄</div>
 
                                         <div class="cell">{{itemList.node.start_time}}出</div>
@@ -136,7 +136,7 @@ let option = {
         currentHour:0,//内部小时
         currentMinute:0,//内部分钟
         startHour:0,//开始小时
-        displayHourNums:6,//显示的小时个数
+        displayHourNums:12,//显示的小时个数
         maxHour:24,//最大小时
         ffdata:{},
     },
@@ -220,6 +220,10 @@ let option = {
             let nodes = this.ffdata.nodes;
             let nodeItems = this.ffdata.node_items;
             let itemAttrs = this.ffdata.item_attributes;
+            
+            if(hour >= 24){
+                hour = hour - 24;
+            }
 
             //读取地图的采矿点
             for (const nodeK in nodes) {
@@ -229,7 +233,10 @@ let option = {
                         //解析出现时间
                         let showStartTime = tempNode.start_time;
                         let showEndTime = tempNode.start_time + tempNode.duration - 1;
-                        if(tempNode.map_id == mapId && hour >= showStartTime && hour <= showEndTime ){
+                        
+                        if(tempNode.map_id == mapId 
+                        && ((hour >= showStartTime && hour <= showEndTime ))
+                        ){
                             //读取采矿点的矿物
                             let tempNodeItem = [];
                             const tempItems = nodeItems[tempNode.id];
