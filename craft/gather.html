@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FFXIV采集时间表</title>
     <!-- <script src="./js/vue.min.js"></script> -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@thewakingsands/kit-tooltip/dist/bundle.js"></script>
-    <script type="text/javascript" src="./js/common.js"></script>
-    <script src="../data/Data.5.3.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/axios.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/jq.js"></script>
+    
     <style>
         html body{
             margin: 0;
@@ -41,7 +42,7 @@
             border-right: none;
         }
         .region_bg, .is_limit_bg{
-            background-color: red;
+            background-color: #e76c6c;
         }
 
         .item-cell{
@@ -81,7 +82,11 @@
         <div class="col-container" style="margin-top: 10px;">
             <!-- 24小时 -->
             <div class="row-container">
-                <div class="row-item item-cell" style="text-align: center;">{{regionName}}-采集分布{{currentHour}}:{{currentMinute}}</div>
+                <div class="row-item item-cell row-container" style="text-align: center;">
+                    <!-- <div class="row-item" style="border: none;"  v-on:click="changeRegion(item.region_id)">长期</div>
+                    <div class="row-item" style="border: none;border-left:1px gray solid"  v-on:click="changeRegion(item.region_id)">[{{currentHour}}:{{currentMinute}}]</div> -->
+                    采集时间分布[{{currentHour}}:{{currentMinute}}]
+                </div>
                 <div class="row-item item-cell" style="text-align: center;" v-for="i in displayHourNums">
                     <div v-if="i == 1" >{{startHour + i - 1 >= 24 ? startHour + i - 1 - 24 :startHour + i - 1}}</div>
                     <div v-if="i > 1">{{startHour + i - 1 >= 24 ? startHour + i - 1 - 24 :startHour + i - 1}}</div>
@@ -100,10 +105,13 @@
                                 style="border-bottom: gray 1px solid;" 
                                 v-for="item in itemList.list">
                                         <div class="cell">{{itemList.node.marker}}</div>
+                                        <div class="cell">~{{item.gather_level}}~</div>
                                         <div class="cell">{{item.name}}</div>
-                                        <div class="cell" style="background-color: #ec789b;">{{item.gather_level}}</div>
-                                        <div class="cell" style="background-color: #c0e95f;" v-if="itemList.node.job_category == 17">矿</div>
-                                        <div class="cell" style="background-color: #60e2ac;" v-if="itemList.node.job_category == 18">园</div>
+                                        <div class="cell" style="background-color: #9096ec;" v-if="itemList.node.job_category == 17">矿</div>
+                                        <div class="cell" style="background-color: #58ebae;" v-if="itemList.node.job_category == 18">园</div>
+                                        <div class="cell" style="background-color: #75b6db;" v-if="item.reward && item.reward.reward == 25200">{{item.reward.high.scrip}}白</div>
+                                        <div class="cell" style="background-color: #c2db53;" v-if="item.reward && item.reward.reward == 17834">{{item.reward.high.scrip}}黄</div>
+
                                         <div class="cell">{{itemList.node.start_time}}出</div>
                                         <div class="cell" :class="{is_limit_bg:itemList.node.duration < 24}">{{itemList.node.duration}}时</div>
                                 </div>
@@ -116,11 +124,33 @@
         </div>
     </div>
 </body>
+
+<script src="../data/Data.5.3.js"></script>
+<script src="../data/collects.js"></script>
 <script>
+function getItemPrice(dc,ids)
+{
+    let baseUrl = "https://universalis.app/api/";
+    baseUrl = baseUrl + dc +"/"+ids;
+    //缓存id价格信息
+
+    axios.get(baseUrl)
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
+// getItemPrice("LuXingNiao","29976,4");
+
 let option = {
     data:{
+        dcName:"LuXingNiao",
         isShowAll:false,//是否先杀24小时在的
         regions:[],//区域列表
+        collectRewards:[],//收藏品奖励
         regionId:0, //区域id
         regionName:"地区",
         currentHour:0,//内部小时
@@ -133,6 +163,8 @@ let option = {
     created(){
         this.ffdata = window.ffdata;
         this.getRegion();
+        this.getCollect();
+        this.initEv();
         this.getET();
         setInterval(()=>{
             this.getET();
@@ -156,6 +188,19 @@ let option = {
             this.regions = regions
             this.regionId = regions.length > 0 ? regions[regions.length-1]["region_id"] : 0;
             this.regionName = regions.length > 0 ? regions[regions.length-1]["region_name"] :"地区";
+        },
+        getCollect(){
+            this.collectRewards = window.collects;
+        },
+        initEv()
+        {   
+            let ignoreType = [0,252]
+            addOverlayListener('LogLine', (data) => {
+                if(ignoreType.indexOf(data.line[0] < 0)){
+                    console.log("...",data);
+                }
+            });
+            startOverlayEvents()
         },
         getET(){
             let localEpoch = (new Date()).getTime();
@@ -195,6 +240,10 @@ let option = {
             let nodes = this.ffdata.nodes;
             let nodeItems = this.ffdata.node_items;
             let itemAttrs = this.ffdata.item_attributes;
+            
+            if(hour >= 24){
+                hour = hour - 24;
+            }
 
             //读取地图的采矿点
             for (const nodeK in nodes) {
@@ -204,15 +253,22 @@ let option = {
                         //解析出现时间
                         let showStartTime = tempNode.start_time;
                         let showEndTime = tempNode.start_time + tempNode.duration - 1;
-                        if(tempNode.map_id == mapId && hour >= showStartTime && hour <= showEndTime ){
+                        
+                        if(tempNode.map_id == mapId 
+                        && ((hour >= showStartTime && hour <= showEndTime ))
+                        ){
                             //读取采矿点的矿物
                             let tempNodeItem = [];
                             const tempItems = nodeItems[tempNode.id];
                             for (const hiddenItem of tempItems["hidden"]) {
-                                tempNodeItem.push(itemAttrs[hiddenItem["item_id"]]);
+                                let tempInfo = itemAttrs[hiddenItem["item_id"]];
+                                tempInfo.reward =  this.collectRewards[hiddenItem["item_id"]];
+                                tempNodeItem.push(tempInfo);
                             }
                             for (const listItem of tempItems["list"]) {
-                                tempNodeItem.push(itemAttrs[listItem["item_id"]]);
+                                let tempInfo = itemAttrs[listItem["item_id"]];
+                                tempInfo.reward =  this.collectRewards[listItem["item_id"]];
+                                tempNodeItem.push(tempInfo);
                             }
                             let tempInfo = {
                                 node:tempNode,
@@ -229,6 +285,7 @@ let option = {
                             let tempNodeItem = [];
                             const tempItems = nodeItems[tempNode.id];
                             for (const hiddenItem of tempItems["hidden"]) {
+                                
                                 tempNodeItem.push(itemAttrs[hiddenItem["item_id"]]);
                             }
                             for (const listItem of tempItems["list"]) {
