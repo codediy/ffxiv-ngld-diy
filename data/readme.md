@@ -5,6 +5,7 @@
 ## 目录内容
 - [teamcraft](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft) 游戏数据包的解析读取
 - [matcha](https://github.com/thewakingsands/matcha) 网络数据包的读取与解析     
+- [universails](https://github.com/Universalis-FFXIV/Universalis) 价格查询api
 
 ## 网络数据包
 - [ff14网络抓包分析]
