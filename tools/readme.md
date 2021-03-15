@@ -1,4 +1,5 @@
 ## 数据源的获取
+
 0. 相关网站
 - [中文wiki]
 - [garlandtools数据网站]
@@ -8,6 +9,7 @@
 - [配方相关](http://www.ffxiv.xin/)
 - [v5+](http://5p.nbb.ffxiv.cn/#/cal)
 - [宝の工具箱(预览版)](http://box.nbb.ffxiv.cn/#/home)
+
 1. 物品信息获取流程
 - 中文wiki搜索相关物品
 - garlandtools获取英文信息
