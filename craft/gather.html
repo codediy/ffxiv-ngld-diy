@@ -122,11 +122,18 @@
                 </div>
             </div>
         </div>
+
+        <!-- 弹窗 -->
+        <div style="display: none;" id="item_price">
+
+        </div>
     </div>
+    
 </body>
 
 <script src="../data/matcha/Data.5.3.js"></script>
 <script src="../data/teamcraft/collects.js"></script>
+<script src="../utils/market.js"></script>
 <script>
 function getItemPrice(dc,ids)
 {
@@ -142,9 +149,7 @@ function getItemPrice(dc,ids)
         console.log(error);
     });
 }
-
 // getItemPrice("LuXingNiao","29976,4");
-
 let option = {
     data:{
         dcName:"LuXingNiao",
@@ -159,6 +164,12 @@ let option = {
         displayHourNums:6,//显示的小时个数
         maxHour:24,//最大小时
         ffdata:{},
+        /**
+         * {
+         * }
+         * 
+         * */
+        itemPrice:[]
     },
     created(){
         this.ffdata = window.ffdata;
@@ -216,7 +227,6 @@ let option = {
         getRegionMaps(){
             let regionId = this.regionId;
             let mapsData = this.ffdata.maps;
-
             let maps = [];
             for (const key in mapsData) {
                 if (Object.hasOwnProperty.call(mapsData, key)) {
