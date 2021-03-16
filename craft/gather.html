@@ -103,7 +103,8 @@
                             <div class="col-container" v-for="itemList in mapHourItems">
                                 <div class="row-container cell-container" 
                                 style="border-bottom: gray 1px solid;" 
-                                v-for="item in itemList.list">
+                                v-for="item in itemList.list" 
+                                v-on:hover="getPrice(item.id)">
                                         <div class="cell">{{itemList.node.marker}}</div>
                                         <div class="cell">~{{item.gather_level}}~</div>
                                         <div class="cell">{{item.name}}</div>
@@ -325,6 +326,9 @@ let option = {
         changeRegion(rid){
             this.regionId = rid;
             this.regionName = this.regions.find(d => d.region_id == rid)["region_name"];
+        },
+        getPrice(id){
+            console.log("getPrice",id);
         }
     }
 };

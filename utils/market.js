@@ -20,8 +20,8 @@
     "retainerName": "口干",
     "total": 19800
   }
-  apiResHistory 
-  {
+ apiResHistory
+ {
     "hq": false,
     "pricePerUnit": 150,
     "quantity": 10,
@@ -30,11 +30,127 @@
     "buyerName": "Nenero",
     "total": 1500
   }
-  option:{
+ option:{
       callback:res => {},
-      hq:false|true
+      hq:false|true,
+      eachWorld:false|true
   }
  */
+const dcs = {
+    "Aether": ["Adamantoise", "Cactuar", "Faerie", "Gilgamesh", "Jenova", "Midgardsormr", "Sargatanas", "Siren"],
+    "Chaos": ["Cerberus", "Louisoix", "Moogle", "Omega", "Ragnarok", "Spriggan"],
+    "Crystal": ["Balmung", "Brynhildr", "Coeurl", "Diabolos", "Goblin", "Malboro", "Mateus", "Zalera"],
+    "Elemental": ["Aegis", "Atomos", "Carbuncle", "Garuda", "Gungnir", "Kujata", "Ramuh", "Tonberry", "Typhon", "Unicorn"],
+    "Gaia": ["Alexander", "Bahamut", "Durandal", "Fenrir", "Ifrit", "Ridill", "Tiamat", "Ultima", "Valefor", "Yojimbo", "Zeromus"],
+    "Light": ["Lich", "Odin", "Phoenix", "Shiva", "Zodiark", "Twintania"],
+    "Mana": ["Anima", "Asura", "Belias", "Chocobo", "Hades", "Ixion", "Mandragora", "Masamune", "Pandaemonium", "Shinryu", "Titan"],
+    "Primal": ["Behemoth", "Excalibur", "Exodus", "Famfrit", "Hyperion", "Lamia", "Leviathan", "Ultros"],
+    "陆行鸟": ["HongYuHai", "ShenYiZhiDi", "LaNuoXiYa", "HuanYingQunDao", "MengYaChi", "YuZhouHeYin", "WoXianXiRan", "ChenXiWangZuo"],
+    "莫古力": ["BaiYinXiang", "BaiJinHuanXiang", "ShenQuanHen", "ChaoFengTing", "LvRenZhanQiao", "FuXiaoZhiJian", "Longchaoshendian", "MengYuBaoJing"],
+    "猫小胖": ["ZiShuiZhanQiao", "YanXia", "JingYuZhuangYuan", "MoDuNa", "HaiMaoChaWu", "RouFengHaiWan", "HuPoYuan"],
+    "LuXingNiao": ["HongYuHai", "ShenYiZhiDi", "LaNuoXiYa", "HuanYingQunDao", "MengYaChi", "YuZhouHeYin", "WoXianXiRan", "ChenXiWangZuo"],
+    "MoGuLi": ["BaiYinXiang", "BaiJinHuanXiang", "ShenQuanHen", "ChaoFengTing", "LvRenZhanQiao", "FuXiaoZhiJian", "Longchaoshendian", "MengYuBaoJing"],
+    "MaoXiaoPang": ["ZiShuiZhanQiao", "YanXia", "JingYuZhuangYuan", "MoDuNa", "HaiMaoChaWu", "RouFengHaiWan", "HuPoYuan"]
+};
+
+const ffChsName = {
+    "23": {"region": "global", "en": "Asura"},
+    "24": {"region": "global", "en": "Belias"},
+    "28": {"region": "global", "en": "Pandaemonium"},
+    "29": {"region": "global", "en": "Shinryu"},
+    "30": {"region": "global", "en": "Unicorn"},
+    "31": {"region": "global", "en": "Yojimbo"},
+    "32": {"region": "global", "en": "Zeromus"},
+    "33": {"region": "global", "en": "Twintania"},
+    "34": {"region": "global", "en": "Brynhildr"},
+    "35": {"region": "global", "en": "Famfrit"},
+    "36": {"region": "global", "en": "Lich"},
+    "37": {"region": "global", "en": "Mateus"},
+    "39": {"region": "global", "en": "Omega"},
+    "40": {"region": "global", "en": "Jenova"},
+    "41": {"region": "global", "en": "Zalera"},
+    "42": {"region": "global", "en": "Zodiark"},
+    "43": {"region": "global", "en": "Alexander"},
+    "44": {"region": "global", "en": "Anima"},
+    "45": {"region": "global", "en": "Carbuncle"},
+    "46": {"region": "global", "en": "Fenrir"},
+    "47": {"region": "global", "en": "Hades"},
+    "48": {"region": "global", "en": "Ixion"},
+    "49": {"region": "global", "en": "Kujata"},
+    "50": {"region": "global", "en": "Typhon"},
+    "51": {"region": "global", "en": "Ultima"},
+    "52": {"region": "global", "en": "Valefor"},
+    "53": {"region": "global", "en": "Exodus"},
+    "54": {"region": "global", "en": "Faerie"},
+    "55": {"region": "global", "en": "Lamia"},
+    "56": {"region": "global", "en": "Phoenix"},
+    "57": {"region": "global", "en": "Siren"},
+    "58": {"region": "global", "en": "Garuda"},
+    "59": {"region": "global", "en": "Ifrit"},
+    "60": {"region": "global", "en": "Ramuh"},
+    "61": {"region": "global", "en": "Titan"},
+    "62": {"region": "global", "en": "Diabolos"},
+    "63": {"region": "global", "en": "Gilgamesh"},
+    "64": {"region": "global", "en": "Leviathan"},
+    "65": {"region": "global", "en": "Midgardsormr"},
+    "66": {"region": "global", "en": "Odin"},
+    "67": {"region": "global", "en": "Shiva"},
+    "68": {"region": "global", "en": "Atomos"},
+    "69": {"region": "global", "en": "Bahamut"},
+    "70": {"region": "global", "en": "Chocobo"},
+    "71": {"region": "global", "en": "Moogle"},
+    "72": {"region": "global", "en": "Tonberry"},
+    "73": {"region": "global", "en": "Adamantoise"},
+    "74": {"region": "global", "en": "Coeurl"},
+    "75": {"region": "global", "en": "Malboro"},
+    "76": {"region": "global", "en": "Tiamat"},
+    "77": {"region": "global", "en": "Ultros"},
+    "78": {"region": "global", "en": "Behemoth"},
+    "79": {"region": "global", "en": "Cactuar"},
+    "80": {"region": "global", "en": "Cerberus"},
+    "81": {"region": "global", "en": "Goblin"},
+    "82": {"region": "global", "en": "Mandragora"},
+    "83": {"region": "global", "en": "Louisoix"},
+    "85": {"region": "global", "en": "Spriggan"},
+    "90": {"region": "global", "en": "Aegis"},
+    "91": {"region": "global", "en": "Balmung"},
+    "92": {"region": "global", "en": "Durandal"},
+    "93": {"region": "global", "en": "Excalibur"},
+    "94": {"region": "global", "en": "Gungnir"},
+    "95": {"region": "global", "en": "Hyperion"},
+    "96": {"region": "global", "en": "Masamune"},
+    "97": {"region": "global", "en": "Ragnarok"},
+    "98": {"region": "global", "en": "Ridill"},
+    "99": {"region": "global", "en": "Sargatanas"},
+    "161": {"region": "global", "en": "Chocobo"},
+    "166": {"region": "global", "en": "Moogle"},
+    "1042": {"region": "cn", "name": "拉诺西亚", "en": "LaNuoXiYa"},
+    "1043": {"region": "cn", "name": "紫水栈桥", "en": "ZiShuiZhanQiao"},
+    "1044": {"region": "cn", "name": "幻影群岛", "en": "HuanYingQunDao"},
+    "1045": {"region": "cn", "name": "摩杜纳", "en": "MoDuNa"},
+    "1060": {"region": "cn", "name": "萌芽池", "en": "MengYaChi"},
+    "1076": {"region": "cn", "name": "白金幻象", "en": "BaiJinHuanXiang"},
+    "1081": {"region": "cn", "name": "神意之地", "en": "ShenYiZhiDi"},
+    "1106": {"region": "cn", "name": "静语庄园", "en": "JingYuZhuangYuan"},
+    "1113": {"region": "cn", "name": "旅人栈桥", "en": "LvRenZhanQiao"},
+    "1121": {"region": "cn", "name": "拂晓之间", "en": "FuXiaoZhiJian"},
+    "1166": {"region": "cn", "name": "龙巢神殿", "en": "Longchaoshendian"},
+    "1167": {"region": "cn", "name": "红玉海", "en": "HongYuHai"},
+    "1168": {"region": "cn", "name": "黄金港", "en": "HuangJinGang"},
+    "1169": {"region": "cn", "name": "延夏", "en": "YanXia"},
+    "1170": {"region": "cn", "name": "潮风亭", "en": "ChaoFengTing"},
+    "1171": {"region": "cn", "name": "神拳痕", "en": "ShenQuanHen"},
+    "1172": {"region": "cn", "name": "白银乡", "en": "BaiYinXiang"},
+    "1173": {"region": "cn", "name": "宇宙和音", "en": "YuZhouHeYin"},
+    "1174": {"region": "cn", "name": "沃仙曦染", "en": "WoXianXiRan"},
+    "1175": {"region": "cn", "name": "晨曦王座", "en": "ChenXiWangZuo"},
+    "1176": {"region": "cn", "name": "梦羽宝境", "en": "MengYuBaoJing"},
+    "1177": {"region": "cn", "name": "海猫茶屋", "en": "HaiMaoChaWu"},
+    "1178": {"region": "cn", "name": "柔风海湾", "en": "RouFengHaiWan"},
+    "1179": {"region": "cn", "name": "琥珀原", "en": "HuPoYuan"}
+};
+
+
 const ffmarket = {
     config: {
         baseApi: "https://universalis.app",
@@ -51,8 +167,20 @@ const ffmarket = {
         perNum: 5,//每个物品显示的前几个
         result: [],
         //api请求缓存
-        PRICE_CHECK:"price_check",
-        HISTORY_CHECK:"history_check",
+        /**
+         * option {
+         *     dc:"LuXingNiao",//重置dc区
+         *     hq:true|false,
+         *     callback:(res) => {}
+         * }
+         */
+        isHq: false,//是否只查询HQ
+        resCallback: (res) => {
+            console.log("res", res)
+        }, //查询回调函数
+        checkType: "price_check",//list/history
+        PRICE_CHECK: "price_check",
+        HISTORY_CHECK: "history_check",
         //[{id:0,time:0,raw:{}}]
         apiResultCache: [],
         cacheTime: 60, //缓存1分钟内的数据
@@ -63,11 +191,13 @@ const ffmarket = {
     },
     init(dcIdOrName) {
         ffmarket.config.isInited = false;
-        if (this.checkLib() && dcIdOrName.length > 0) {
+        if (this.checkLib()) {
             ffmarket.config.axiosInstance = axios.create({
                 baseURL: ffmarket.baseApi,
             });
-            ffmarket.config.currentDc = dcIdOrName;
+            if (dcIdOrName) {
+                ffmarket.config.currentDc = dcIdOrName;
+            }
             ffmarket.config.isInited = true;
         } else {
             console.log("axios erorr or dc error")
@@ -112,73 +242,106 @@ const ffmarket = {
     hideLoading() {
         ffmarket.isLoading = false;
     },
-    
     getOnePrice(itemId, option) {
-        option.type = ffmarket.config.PRICE_CHECK;
+        ffmarket.handleOption(option);
+        ffmarket.config.checkType = ffmarket.config.PRICE_CHECK;
         //单个id转换为多个id
-        ffmarket.getManyInfo([1,itemId],option);
+        ffmarket.getManyInfo([1, itemId]);
     },
     getOneHistory(itemId, option) {
-        option.type = ffmarket.config.HISTORY_CHECK;
+        ffmarket.handleOption(option);
+        ffmarket.config.checkType = ffmarket.config.HISTORY_CHECK;
         //单个id转换为多个id
-        ffmarket.getManyInfo([1,itemId],option);
+        ffmarket.getManyInfo([1, itemId]);
     },
     getManyPrice(itemIds, option) {
-        option.type = ffmarket.config.PRICE_CHECK;
-        ffmarket.getManyInfo(itemIds,option);
+        ffmarket.handleOption(option);
+        ffmarket.config.checkType = ffmarket.config.PRICE_CHECK;
+        ffmarket.getManyInfo(itemIds);
     },
     getManyHistory(itemIds, option) {
-        option.type = ffmarket.config.HISTORY_CHECK;
-        ffmarket.getManyInfo(itemIds,option);
+        ffmarket.handleOption(option);
+        ffmarket.config.checkType = ffmarket.config.HISTORY_CHECK;
+        ffmarket.getManyInfo(itemIds);
     },
-    getManyInfo(itemIds,option){
+    /**
+     * 参数处理
+     * @param option
+     */
+    handleOption(option) {
+        if (option.dc) {
+            if (dcs.hasOwnProperty(option.dc)
+                && Array.isArray(dcs[option.dc])) {
+                ffmarket.config.currentDc = option.dc;
+            } else {
+                ffmarket.err("dc error", dc)
+            }
+        }
+        if (option.hq) {
+            ffmarket.config.isHq = true;
+        } else {
+            ffmarket.config.isHq = false;
+        }
+        if (option.callback) {
+            if (typeof option.callback) {
+                ffmarket.config.resCallback = option.callback
+            } else {
+                ffmarket.err("callback error");
+            }
+        }
+    },
+    getManyInfo(itemIds) {
         this.getPriceCallback(itemIds, datas => {
             //读取历史数据
-            let tempManyResults = [];
+            let tempManyResults = {
+                raw: datas, //原始列表数据
+                result: [],
+            };
             for (const tempItem of datas) {
                 //单个数据的获取
                 let tempResult = {
                     id: tempItem.itemID,
                     time: tempItem.lastUploadTime,
-                    raw: datas,
                     list: [],
                 };
                 //处理列表与成交历史
-                if(option.type == ffmarket.config.PRICE_CHECK && tempItem.listings.length > 0){
-                    tempResult.list = ffmarket.handlePrice(tempItem.listings, option);
+                if (ffmarket.config.checkType == ffmarket.config.PRICE_CHECK
+                    && tempItem.listings.length > 0) {
+                    tempResult.list = ffmarket.handlePrice(tempItem.listings);
                 }
-                if(option.type == ffmarket.config.HISTORY_CHECK && tempItem.recentHistory.length > 0){
-                    tempResult.list = ffmarket.handleHistory(tempItem.recentHistory, option);
+                if (ffmarket.config.checkType == ffmarket.config.HISTORY_CHECK
+                    && tempItem.recentHistory.length > 0) {
+                    tempResult.list = ffmarket.handleHistory(tempItem.recentHistory);
                 }
-                tempManyResults.push(tempResult);
+                tempManyResults.result.push(tempResult);
             }
-            option.callback && typeof option.callback === 'function'
-                ? option.callback(tempManyResults)
-                : ffmarket.result = tempManyResults;
-        },option);
+            ffmarket.config.result = tempManyResults;
+            //回调处理
+            ffmarket.config.resCallback(tempManyResults);
+        });
     },
-    getPriceCallback(itemIds,callback,option) {
+    getPriceCallback(itemIds, callback) {
         if (ffmarket.config.isInited) {
             //loading... 
             ffmarket.showLoading();
             //检查缓存
-            let checkCacheResult = ffmarket.checkApiCache(itemIds,option);
-            console.log("checkCacheResult",checkCacheResult);
-
-            if(checkCacheResult.needApiIds.length > 0){
+            let checkCacheResult = ffmarket.checkApiCache(itemIds);
+            console.log("checkCacheResult", checkCacheResult);
+            if (checkCacheResult.needApiIds.length > 0) {
                 //api request
-                let url = ffmarket.config.baseApi + ffmarket.config.listApi;
+                let url = ffmarket.config.baseApi + ffmarket.config.listApi + ffmarket.config.currentDc + "/";
+                console.log("api", url);
                 let checkIds = checkCacheResult.needApiIds;
-                if(checkIds.length == 1){ //修正单个数据
+                if (checkIds.length == 1) { //修正单个数据
                     checkIds.push(1);
                 }
                 ffmarket.config.axiosInstance
-                    .get(url + ffmarket.config.currentDc + "/" + checkIds)
+                    .get(url + checkIds)
                     .then(res => {
                         ffmarket.hideLoading();
                         if (typeof callback === 'function') {
                             //缓存数据
-                            let tempResult = ffmarket.setApiCache(res.data.items,checkCacheResult.data,option);
+                            let tempResult = ffmarket.setApiCache(res.data.items, checkCacheResult.data);
                             callback(tempResult);
                         }
                     })
@@ -186,7 +349,7 @@ const ffmarket = {
                         ffmarket.hideLoading();
                         console.log("getPriceCallback", error);
                     });
-            }else{
+            } else {
                 ffmarket.hideLoading();
                 if (typeof callback === 'function') {
                     callback(checkCacheResult.data);
@@ -194,99 +357,163 @@ const ffmarket = {
             }
         }
     },
-    handlePrice(rawList, option) {
-        let tempResultList = [];
+    /**
+     *
+     * @param rawList
+     * @param option
+     * @returns {[]}
+     */
+    handlePrice(rawList) {
+        let tempResultList = {"dc": [], "world": []};
         for (const tempItem of rawList) {
-            if (tempResultList.length < ffmarket.config.perNum) {
+            if (tempResultList.dc.length < ffmarket.config.perNum) {
                 //检查是否需要hq
-                if (option.hq && !tempItem.hq) {
+                if (ffmarket.config.isHq && !tempItem.hq) {
                     continue;
                 }
-                tempResultList.push({
+                let tempWorld = tempItem.worldName ? tempItem.worldName : ffmarket.config.currentDc;
+                tempResultList.dc.push({
                     price: tempItem.pricePerUnit,
                     num: tempItem.quantity,
                     total: tempItem.total,
-                    worldName: tempItem.worldName,
+                    worldName: ffmarket.handleWorldName(tempWorld),
                     hq: tempItem.hq
                 });
             }
         }
+        //取出每个区的
+        tempResultList.world = ffmarket.handleWorldData(rawList);
         return tempResultList;
     },
-    handleHistory(rawList, option) {
-        let tempResultList = [];
+
+    handleHistory(rawList) {
+        let tempResultList = {"dc": [], "world": []};
         for (const tempItem of rawList) {
-            if (tempResultList.length < ffmarket.config.perNum) {
+            if (tempResultList.dc.length < ffmarket.config.perNum) {
                 //检查是否需要hq
-                if (option.hq && !tempItem.hq) {
+                if (ffmarket.config.isHq && !tempItem.hq) {
                     continue;
                 }
-                tempResultList.push({
+                let tempWorld = tempItem.worldName ? tempItem.worldName : ffmarket.config.currentDc;
+                tempResultList.dc.push({
                     price: tempItem.pricePerUnit,
                     num: tempItem.quantity,
                     total: tempItem.total,
-                    worldName: tempItem.worldName,
+                    worldName: ffmarket.handleWorldName(tempWorld),
                     hq: tempItem.hq,
                     time: tempItem.timestamp
                 })
             }
         }
+        //取出每个区的
+        tempResultList.world = ffmarket.handleWorldData(rawList);
         return tempResultList;
     },
-    setApiCache(itemsInfo,cacheData,option){
+    handleWorldName(worldName) {
+        let tempWorld = worldName ? worldName : ffmarket.config.currentDc;
+        let tempChsName = tempWorld;
+        let chsNameIndex = Object.values(ffChsName).findIndex(d => d.en == worldName);
+        if (chsNameIndex >= 0) {
+            tempChsName = Object.values(ffChsName)[chsNameIndex]["name"];
+        }
+        return tempChsName;
+    },
+    handleWorldData(rawList) {
+        let result = [];//[{world:[],data:[]}]
+        let worlds = dcs[ffmarket.config.currentDc];
+        for (const tempWorld of worlds) {
+            let tempWorldResult = {
+                world: ffmarket.handleWorldName(tempWorld),
+                data: []
+            };
+            tempWorldResult.data.push(rawList
+                .filter(d => {
+                    return d.worldName === tempWorld && d.hq === ffmarket.config.isHq;
+                })
+                .map(tempItem => {
+                    if(ffmarket.config.checkType == ffmarket.config.PRICE_CHECK){
+                        return {
+                            price: tempItem.pricePerUnit,
+                            num: tempItem.quantity,
+                            total: tempItem.total,
+                            worldName: ffmarket.handleWorldName(tempWorld),
+                            hq: tempItem.hq
+                        }
+                    }
+                    if(ffmarket.config.checkType == ffmarket.config.HISTORY_CHECK){
+                        return {
+                            price: tempItem.pricePerUnit,
+                            num: tempItem.quantity,
+                            total: tempItem.total,
+                            worldName: ffmarket.handleWorldName(tempWorld),
+                            hq: tempItem.hq,
+                            time: tempItem.timestamp
+                        }
+                    }
+                })
+            );
+            result.push(tempWorldResult);
+        }
+        return result;
+    },
+    setApiCache(itemsInfo, cacheData) {
 
         let now = ffmarket.config.now();
-        let tempHq = option.hq ? option.hq : false;
-
         for (const tempItem of itemsInfo) {
             let tempCacheInfo = {
-                id:tempItem.itemID,
-                hq:option.hq ? option.hq : false, //是否hq的
-                time:now,
-                raw:tempItem
+                id: tempItem.itemID,
+                hq: ffmarket.config.isHq, //是否hq的
+                time: now,
+                raw: tempItem
             };
             //检查是否已缓存
             let tempIndex = ffmarket.config.apiResultCache.findIndex(d => {
-                d.id == tempItem.itemID &&  d.hq == tempHq
+                return d.id === tempItem.itemID && d.hq === ffmarket.config.isHq
             });
 
-            if(tempIndex > 0){
+            if (tempIndex > 0) {
                 ffmarket.config.apiResultCache[tempIndex] = tempCacheInfo;
-            }else{
+            } else {
                 ffmarket.config.apiResultCache.push(tempCacheInfo)
             }
         }
         return cacheData.concat(itemsInfo);
     },
-    checkApiCache(itemIds,option) {
+    checkApiCache(itemIds) {
         let result = {
-            data:[],
-            needApiIds:[]
+            data: [],
+            needApiIds: []
         };
         //检查时间
         let now = ffmarket.config.now();
         let maxCha = ffmarket.config.cacheTime;
-        let tempHq = option.hq ? option.hq : false;
 
-        if(ffmarket.config.apiResultCache.length > 0){
+        if (ffmarket.config.apiResultCache.length > 0) {
             for (const tempItemId of itemIds) {
                 let tempIndex = ffmarket.config.apiResultCache.findIndex(d => {
-                    return d.id == tempItemId && d.hq == tempHq
+                    return d.id === tempItemId && d.hq === ffmarket.config.isHq
                 });
-                if(tempIndex >= 0 
-                    &&  now - ffmarket.config.apiResultCache[tempIndex]["time"] < maxCha //缓存有效
-                ){
+                if (tempIndex >= 0
+                    && now - ffmarket.config.apiResultCache[tempIndex]["time"] < maxCha //缓存有效
+                ) {
                     result.data.push(ffmarket.config.apiResultCache[tempIndex]["raw"])
-                }else{
+                } else {
                     result.needApiIds.push(tempItemId);
                 }
             }
-        }else{
+        } else {
             result.needApiIds = itemIds;
         }
         return result;
     },
+
+    err(...msg) {
+        console.log(msg);
+    },
 }
+
+exportToGlobal(ffmarket, "ffmarket")
+
 /**
  * test
  */
@@ -308,9 +535,10 @@ function testGetOnePrice() {
         }, hq: true
     });
 }
-// testGetOnePrice();
-function testCache()
-{
+
+testGetOnePrice();
+
+function testCache() {
     console.log("testCache");
 
     let world = "LuXingNiao";
@@ -339,7 +567,7 @@ function testCache()
                 console.log("获取的当前hq价格", res);
             }, hq: true
         });
-    },5000)
+    }, 5000)
     setTimeout(() => {
         ffmarket.getOnePrice(itemid, {
             callback: res => {
@@ -351,8 +579,9 @@ function testCache()
                 console.log("获取的当前hq价格", res);
             }, hq: true
         });
-    },10000)
+    }, 10000)
 }
+
 // testCache();
 function testGetOneHistory() {
     console.log("testGetOneHistory");
@@ -370,9 +599,9 @@ function testGetOneHistory() {
         }, hq: true
     });
 }
+
 // testGetOneHistory();
 function testGetManyPrice() {
-   
     console.log("testGetManyPrice");
     let world = "LuXingNiao";
     ffmarket.init(world);
@@ -389,6 +618,7 @@ function testGetManyPrice() {
         }, hq: true
     });
 }
+
 // testGetManyPrice();
 function testGetManyHistory() {
     console.log("testGetManyHistory");
@@ -407,4 +637,6 @@ function testGetManyHistory() {
         }, hq: true
     });
 }
+
 // testGetManyHistory();
+
