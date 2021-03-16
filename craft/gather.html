@@ -9,332 +9,386 @@
     <script src="../lib/axios.js"></script>
     <script src="../lib/common.js"></script>
     <script src="../lib/jq.js"></script>
-    
+
     <style>
-        html body{
+        html body {
             margin: 0;
             padding: 0;
         }
+
         #app {
             width: 90%;
             margin: 25px auto;
             color: blueviolet;
         }
-        #region-container,#item-container {
+
+        #region-container, #item-container {
             width: 100%;
         }
+        /*列*/
         .row-container {
             width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
         }
+        /*行*/
         .col-container {
             width: 100%;
             display: flex;
             flex-direction: column;
         }
         .row-item {
-            flex:1;
+            flex: 1;
             padding: 3px;
             align-items: center;
             border: 1px solid black;
             border-right: none;
         }
-        .region_bg, .is_limit_bg{
+
+        .region_bg, .is_limit_bg {
             background-color: #e76c6c;
         }
 
-        .item-cell{
-            border-bottom:none ;
+        .item-cell {
+            border-bottom: none;
         }
-        .region-item{
+
+        .region-item {
             text-align: center;
         }
-        .region-item:last-child,.item-cell:last-child{
-            border-right:1px solid black;
+
+        .region-item:last-child, .item-cell:last-child {
+            border-right: 1px solid black;
         }
-        .item-cell-container:last-child{
-            border-bottom:1px solid black;
+
+        .item-cell-container:last-child {
+            border-bottom: 1px solid black;
         }
-        .cell-container{
+
+        .cell-container {
             flex-wrap: wrap;
         }
-        .cell{
-            flex-basis:content;
+
+        .cell {
+            flex-basis: content;
             padding: 3px;
         }
     </style>
 </head>
 <body>
-    <div id="app" class="col-container" >
-        <div class="row-container region-tab">
-            <!-- 区域tab -->
-            <div class="row-item region-item" 
-                v-for="item  in regions" 
-                :key="item.region_id" 
-                :class="{region_bg:item.region_id == regionId}"
-                v-on:click="changeRegion(item.region_id)">
-                {{item.region_name}}
+<div id="app" class="col-container">
+    <div class="row-container region-tab">
+        <!-- 区域tab -->
+        <div class="row-item region-item"
+             v-for="item  in regions"
+             :key="item.region_id"
+             :class="{region_bg:item.region_id == regionId}"
+             v-on:click="changeRegion(item.region_id)">
+            {{item.region_name}}
+        </div>
+    </div>
+    <!-- 矿物table -->
+    <div class="col-container" style="margin-top: 10px;">
+        <!-- 24小时 -->
+        <div class="row-container">
+            <div class="row-item item-cell row-container" style="text-align: center;">
+                采集时间分布[{{currentHour}}:{{currentMinute}}]
+            </div>
+            <div class="row-item item-cell" style="text-align: center;" v-for="i in displayHourNums">
+                <div v-if="i == 1">{{startHour + i - 1 >= 24 ? startHour + i - 1 - 24 :startHour + i - 1}}</div>
+                <div v-if="i > 1">{{startHour + i - 1 >= 24 ? startHour + i - 1 - 24 :startHour + i - 1}}</div>
             </div>
         </div>
-        <!-- 矿物table -->
-        <div class="col-container" style="margin-top: 10px;">
-            <!-- 24小时 -->
-            <div class="row-container">
-                <div class="row-item item-cell row-container" style="text-align: center;">
-                    <!-- <div class="row-item" style="border: none;"  v-on:click="changeRegion(item.region_id)">长期</div>
-                    <div class="row-item" style="border: none;border-left:1px gray solid"  v-on:click="changeRegion(item.region_id)">[{{currentHour}}:{{currentMinute}}]</div> -->
-                    采集时间分布[{{currentHour}}:{{currentMinute}}]
-                </div>
-                <div class="row-item item-cell" style="text-align: center;" v-for="i in displayHourNums">
-                    <div v-if="i == 1" >{{startHour + i - 1 >= 24 ? startHour + i - 1 - 24 :startHour + i - 1}}</div>
-                    <div v-if="i > 1">{{startHour + i - 1 >= 24 ? startHour + i - 1 - 24 :startHour + i - 1}}</div>
-                </div>
-            </div>
-            <!-- 地图矿物 -->
-            <div class="col-container">
-                <div class="item-cell-container row-container"  v-for="mapItem in getRegionMaps()">
-                    <!-- 地图 -->
-                    <div class="row-item item-cell" style="text-align: center;vertical-align:center;">{{mapItem.name}}</div>
-                    <!-- 矿物 -->
-                    <div class="row-item item-cell col-container" v-for="i in displayHourNums"> 
-                        <div  class="col-container" v-for="mapHourItems in getMapItems(mapItem.id,startHour + i - 1)">
-                            <div class="col-container" v-for="itemList in mapHourItems">
-                                <div class="row-container cell-container" 
-                                style="border-bottom: gray 1px solid;" 
-                                v-for="item in itemList.list" 
-                                v-on:hover="getPrice(item.id)">
-                                        <div class="cell">{{itemList.node.marker}}</div>
-                                        <div class="cell">~{{item.gather_level}}~</div>
-                                        <div class="cell">{{item.name}}</div>
-                                        <div class="cell" style="background-color: #9096ec;" v-if="itemList.node.job_category == 17">矿</div>
-                                        <div class="cell" style="background-color: #58ebae;" v-if="itemList.node.job_category == 18">园</div>
-                                        <div class="cell" style="background-color: #75b6db;" v-if="item.reward && item.reward.reward == 25200">{{item.reward.high.scrip}}白</div>
-                                        <div class="cell" style="background-color: #c2db53;" v-if="item.reward && item.reward.reward == 17834">{{item.reward.high.scrip}}黄</div>
-
-                                        <div class="cell">{{itemList.node.start_time}}出</div>
-                                        <div class="cell" :class="{is_limit_bg:itemList.node.duration < 24}">{{itemList.node.duration}}时</div>
+        <!-- 地图矿物 -->
+        <div class="col-container">
+            <div class="item-cell-container row-container" v-for="mapItem in getRegionMaps()">
+                <!-- 地图 -->
+                <div class="row-item item-cell" style="text-align: center;vertical-align:center;">{{mapItem.name}}</div>
+                <!-- 矿物 -->
+                <div class="row-item item-cell col-container" v-for="i in displayHourNums">
+                    <div class="col-container" v-for="mapHourItems in getMapItems(mapItem.id,startHour + i - 1)">
+                        <div class="col-container" v-for="itemList in mapHourItems">
+                            <div style="border-bottom: gray 1px solid;"
+                                 v-for="item in itemList.list">
+                                <div class="row-container cell-container">
+                                    <div class="cell" style="background-color: #9096ec;"
+                                         v-if="itemList.node.job_category == 17">矿
+                                    </div>
+                                    <div class="cell" style="background-color: #58ebae;"
+                                         v-if="itemList.node.job_category == 18">园
+                                    </div>
+                                    <div class="cell">{{itemList.node.start_time}}出</div>
+                                    <div class="cell" :class="{is_limit_bg:itemList.node.duration < 24}">
+                                        {{itemList.node.duration}}时
+                                    </div>
+                                    <div class="cell" style="background-color: #75b6db;"
+                                         v-if="item.reward && item.reward.reward == 25200">
+                                        {{item.reward.high.scrip}}白
+                                    </div>
+                                    <div class="cell" style="background-color: #c2db53;"
+                                         v-if="item.reward && item.reward.reward == 17834">
+                                        {{item.reward.high.scrip}}黄
+                                    </div>
+                                    <div class="cell" style="background-color: #c2db53;" @click="togglePrice(item)">价</div>
+                                </div>
+                                <div class="row-container cell-container">
+                                    <div class="cell">{{itemList.node.marker}}</div>
+                                    <div class="cell">{{item.name}}</div>
+                                    <div class="cell">~{{item.gather_level}}~</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
+    </div>
 
-        <!-- 弹窗 -->
-        <div style="display: none;" id="item_price">
-
+    <!-- 弹窗 -->
+    <div style="position: absolute;z-index: 100;background-color: black" v-if="showPriceId > 0">
+        <div class="col-container">
+            <div>跨服排行</div>
+            <div class="row-container">
+                <div class="row-item" >aaa</div>
+            </div>
+        </div>
+        <div class="row-container cell-container">
+            <div>各区排行</div>
+        </div>
+        <div class="row-container cell-container">
+            <div>历史成交</div>
         </div>
     </div>
-    
+</div>
+
 </body>
 
 <script src="../data/matcha/Data.5.3.js"></script>
 <script src="../data/teamcraft/collects.js"></script>
 <script src="../utils/market.js"></script>
 <script>
-function getItemPrice(dc,ids)
-{
-    let baseUrl = "https://universalis.app/api/";
-    baseUrl = baseUrl + dc +"/"+ids;
-    //缓存id价格信息
-
-    axios.get(baseUrl)
-    .then(function (response) {
-        console.log(response);
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
-}
-// getItemPrice("LuXingNiao","29976,4");
-let option = {
-    data:{
-        dcName:"LuXingNiao",
-        isShowAll:false,//是否先杀24小时在的
-        regions:[],//区域列表
-        collectRewards:[],//收藏品奖励
-        regionId:0, //区域id
-        regionName:"地区",
-        currentHour:0,//内部小时
-        currentMinute:0,//内部分钟
-        startHour:0,//开始小时
-        displayHourNums:6,//显示的小时个数
-        maxHour:24,//最大小时
-        ffdata:{},
-        /**
-         * {
-         * }
-         * 
-         * */
-        itemPrice:[]
-    },
-    created(){
-        this.ffdata = window.ffdata;
-        this.getRegion();
-        this.getCollect();
-        this.initEv();
-        this.getET();
-        setInterval(()=>{
+    let option = {
+        data: {
+            dcName: "LuXingNiao",
+            isShowAll: false,//是否先杀24小时在的
+            regions: [],//区域列表
+            collectRewards: [],//收藏品奖励
+            regionId: 0, //区域id
+            regionName: "地区",
+            currentHour: 0,//内部小时
+            currentMinute: 0,//内部分钟
+            startHour: 0,//开始小时
+            displayHourNums: 6,//显示的小时个数
+            maxHour: 24,//最大小时
+            ffdata: {},//静态数据
+            showPriceId: 0,
+            isCheckPrice: false,//是否在查询价格
+            itemPrice: {}//缓存价格数据
+        },
+        created() {
+            this.ffdata = window.ffdata;
+            this.getRegion();
+            this.getCollect();
+            this.initEv();
             this.getET();
-        },1000);
-    },
-    methods:{
-        //读取区域信息
-        getRegion(){
-            let mapsData = this.ffdata.maps;
-            let regionIds = [];
-            let regions = [];
-            for (const key in mapsData) {
-                if (Object.hasOwnProperty.call(mapsData, key)) {
-                    const mapItem = mapsData[key];
-                    if(regionIds.indexOf(mapItem.region_id) < 0){
-                        regionIds.push(mapItem.region_id);
-                        regions.push({region_id:mapItem.region_id,region_name:mapItem.region_name});
+            setInterval(() => {
+                this.getET();
+            }, 1000);
+            ffmarket.init("LuXingNiao");//默认注册陆行鸟服
+        },
+        computed: {
+            isPrice() {
+                return id => {
+                    return this.itemPrice.findIndex(d => d.id === id) > -1;
+                }
+            },
+            priceInfo() {
+                return id => {
+                    if (this.itemPrice.findIndex(d => d.id === id) > -1) {
+                        return this.itemPrice.find(d => d.id === id)
                     }
                 }
             }
-            this.regions = regions
-            this.regionId = regions.length > 0 ? regions[regions.length-1]["region_id"] : 0;
-            this.regionName = regions.length > 0 ? regions[regions.length-1]["region_name"] :"地区";
         },
-        getCollect(){
-            this.collectRewards = window.collects;
-        },
-        initEv()
-        {   
-            let ignoreType = [0,252]
-            addOverlayListener('LogLine', (data) => {
-                if(ignoreType.indexOf(data.line[0] < 0)){
-                    console.log("...",data);
-                }
-            });
-            startOverlayEvents()
-        },
-        getET(){
-            let localEpoch = (new Date()).getTime();
-            let epoch = localEpoch * 20.571428571428573;
-            let minutes = parseInt((epoch / (1000 * 60)) % 60);
-            let hours = parseInt((epoch / (1000 * 60 * 60)) % 24);
-            // console.log("h-m",hours,minutes);
-            this.currentHour = hours;
-            this.currentMinute = minutes;
-            this.startHour = hours;
-        },
-        //读取特定区域下的地图
-        getRegionMaps(){
-            let regionId = this.regionId;
-            let mapsData = this.ffdata.maps;
-            let maps = [];
-            for (const key in mapsData) {
-                if (Object.hasOwnProperty.call(mapsData, key)) {
-                    const mapItem = mapsData[key];
-                    if(mapItem.region_id == regionId){
-                        maps.push({
-                            id:mapItem.id,
-                            name:mapItem.place_name
-                        });
+        methods: {
+            //读取区域信息
+            getRegion() {
+                let mapsData = this.ffdata.maps;
+                let regionIds = [];
+                let regions = [];
+                for (const key in mapsData) {
+                    if (Object.hasOwnProperty.call(mapsData, key)) {
+                        const mapItem = mapsData[key];
+                        if (regionIds.indexOf(mapItem.region_id) < 0) {
+                            regionIds.push(mapItem.region_id);
+                            regions.push({region_id: mapItem.region_id, region_name: mapItem.region_name});
+                        }
                     }
                 }
-            }
-            return maps;
-        },
-        //读取地图的资源信息
-        getMapItems(mapId,hour){
-            let items = [
-                [],[],[],[],[],[],[],[],[],[],[],[],
-                [],[],[],[],[],[],[],[],[],[],[],[],
-            ];
-            let nodes = this.ffdata.nodes;
-            let nodeItems = this.ffdata.node_items;
-            let itemAttrs = this.ffdata.item_attributes;
-            
-            if(hour >= 24){
-                hour = hour - 24;
-            }
-
-            //读取地图的采矿点
-            for (const nodeK in nodes) {
-                if (Object.hasOwnProperty.call(nodes, nodeK) ) {
-                    const tempNode = nodes[nodeK];
-                    if(tempNode.duration < 24){ //
-                        //解析出现时间
-                        let showStartTime = tempNode.start_time;
-                        let showEndTime = tempNode.start_time + tempNode.duration - 1;
-                        
-                        if(tempNode.map_id == mapId 
-                        && ((hour >= showStartTime && hour <= showEndTime ))
-                        ){
-                            //读取采矿点的矿物
-                            let tempNodeItem = [];
-                            const tempItems = nodeItems[tempNode.id];
-                            for (const hiddenItem of tempItems["hidden"]) {
-                                let tempInfo = itemAttrs[hiddenItem["item_id"]];
-                                tempInfo.reward =  this.collectRewards[hiddenItem["item_id"]];
-                                tempNodeItem.push(tempInfo);
-                            }
-                            for (const listItem of tempItems["list"]) {
-                                let tempInfo = itemAttrs[listItem["item_id"]];
-                                tempInfo.reward =  this.collectRewards[listItem["item_id"]];
-                                tempNodeItem.push(tempInfo);
-                            }
-                            let tempInfo = {
-                                node:tempNode,
-                                list:tempNodeItem,
-                            }
-                            items[hour].push({
-                                node:tempNode,
-                                list:tempNodeItem,
+                this.regions = regions
+                this.regionId = regions.length > 0 ? regions[regions.length - 1]["region_id"] : 0;
+                this.regionName = regions.length > 0 ? regions[regions.length - 1]["region_name"] : "地区";
+            },
+            getCollect() {
+                this.collectRewards = window.collects;
+            },
+            initEv() {
+                let ignoreType = [0, 252]
+                addOverlayListener('LogLine', (data) => {
+                    if (ignoreType.indexOf(data.line[0] < 0)) {
+                        console.log("...", data);
+                    }
+                });
+                startOverlayEvents()
+            },
+            getET() {
+                let localEpoch = (new Date()).getTime();
+                let epoch = localEpoch * 20.571428571428573;
+                let minutes = parseInt((epoch / (1000 * 60)) % 60);
+                let hours = parseInt((epoch / (1000 * 60 * 60)) % 24);
+                // console.log("h-m",hours,minutes);
+                this.currentHour = hours;
+                this.currentMinute = minutes;
+                this.startHour = hours;
+            },
+            //读取特定区域下的地图
+            getRegionMaps() {
+                let regionId = this.regionId;
+                let mapsData = this.ffdata.maps;
+                let maps = [];
+                for (const key in mapsData) {
+                    if (Object.hasOwnProperty.call(mapsData, key)) {
+                        const mapItem = mapsData[key];
+                        if (mapItem.region_id == regionId) {
+                            maps.push({
+                                id: mapItem.id,
+                                name: mapItem.place_name
                             });
                         }
-                    }else if(this.isShowAll && tempNode.duration == 24){ //24常驻
-                        if(tempNode.map_id == mapId){
-                            //读取采矿点的矿物
-                            let tempNodeItem = [];
-                            const tempItems = nodeItems[tempNode.id];
-                            for (const hiddenItem of tempItems["hidden"]) {
-                                
-                                tempNodeItem.push(itemAttrs[hiddenItem["item_id"]]);
-                            }
-                            for (const listItem of tempItems["list"]) {
-                                tempNodeItem.push(itemAttrs[listItem["item_id"]]);
-                            }
-                            let tempInfo = {
-                                node:tempNode,
-                                list:tempNodeItem,
-                            }
-                            items[hour].push({
-                                node:tempNode,
-                                list:tempNodeItem,
-                            });
-                        }   
                     }
                 }
+                return maps;
+            },
+            //读取地图的资源信息
+            getMapItems(mapId, hour) {
+                let items = [
+                    [], [], [], [], [], [], [], [], [], [], [], [],
+                    [], [], [], [], [], [], [], [], [], [], [], [],
+                ];
+                let nodes = this.ffdata.nodes;
+                let nodeItems = this.ffdata.node_items;
+                let itemAttrs = this.ffdata.item_attributes;
+
+                if (hour >= 24) {
+                    hour = hour - 24;
+                }
+
+                //读取地图的采矿点
+                for (const nodeK in nodes) {
+                    if (Object.hasOwnProperty.call(nodes, nodeK)) {
+                        const tempNode = nodes[nodeK];
+                        if (tempNode.duration < 24) { //
+                            //解析出现时间
+                            let showStartTime = tempNode.start_time;
+                            let showEndTime = tempNode.start_time + tempNode.duration - 1;
+
+                            if (tempNode.map_id == mapId
+                                && ((hour >= showStartTime && hour <= showEndTime))
+                            ) {
+                                //读取采矿点的矿物
+                                let tempNodeItem = [];
+                                const tempItems = nodeItems[tempNode.id];
+                                for (const hiddenItem of tempItems["hidden"]) {
+                                    let tempInfo = itemAttrs[hiddenItem["item_id"]];
+                                    tempInfo.reward = this.collectRewards[hiddenItem["item_id"]];
+                                    tempNodeItem.push(tempInfo);
+                                }
+                                for (const listItem of tempItems["list"]) {
+                                    let tempInfo = itemAttrs[listItem["item_id"]];
+                                    tempInfo.reward = this.collectRewards[listItem["item_id"]];
+                                    tempNodeItem.push(tempInfo);
+                                }
+                                let tempInfo = {
+                                    node: tempNode,
+                                    list: tempNodeItem,
+                                }
+                                items[hour].push({
+                                    node: tempNode,
+                                    list: tempNodeItem,
+                                });
+                            }
+                        } else if (this.isShowAll && tempNode.duration == 24) { //24常驻
+                            if (tempNode.map_id == mapId) {
+                                //读取采矿点的矿物
+                                let tempNodeItem = [];
+                                const tempItems = nodeItems[tempNode.id];
+                                for (const hiddenItem of tempItems["hidden"]) {
+
+                                    tempNodeItem.push(itemAttrs[hiddenItem["item_id"]]);
+                                }
+                                for (const listItem of tempItems["list"]) {
+                                    tempNodeItem.push(itemAttrs[listItem["item_id"]]);
+                                }
+                                let tempInfo = {
+                                    node: tempNode,
+                                    list: tempNodeItem,
+                                }
+                                items[hour].push({
+                                    node: tempNode,
+                                    list: tempNodeItem,
+                                });
+                            }
+                        }
+                    }
+                }
+                let result = items.slice(this.startHour, this.startHour + this.displayHourNums);
+                if (this.startHour + this.displayHourNums >= 24) { //截取前面一部分
+                    let cha = this.startHour + this.displayHourNums - 24;
+                    let paddingEl = items.slice(0, cha - 1);
+                    result = result.concat(paddingEl);
+                }
+                return result;
+            },
+
+            changeRegion(rid) {
+                this.regionId = rid;
+                this.regionName = this.regions.find(d => d.region_id == rid)["region_name"];
+            },
+            togglePrice(item) {
+                console.log("togglePrice",item);
+                let id = item.id
+                this.showPriceId = id;
+                if (!this.isCheckPrice) {
+                    this.isCheckPrice = true;
+                    ffmarket.getOnePrice(id, {
+                        callback: res => {
+                            this.isCheckPrice = false;
+                            let tempIndex = res.result.findIndex(d => d.id === id);
+                            if (res.result.length > 0 && tempIndex > -1) {
+                                let tempPrice = {
+                                    id: id,
+                                    item:item,
+                                    price: res.result[tempIndex]
+                                };
+                                this.itemPrice.push(tempPrice);
+                                this.currentPrice = tempPrice;
+                            }
+                        }
+                    });
+                } else {
+                    this.tip("价格查询中")
+                }
+            },
+            tip(msg) {
+                console.log(msg);
             }
-            let result = items.slice(this.startHour,this.startHour+this.displayHourNums);
-            if(this.startHour + this.displayHourNums >= 24){ //截取前面一部分
-                let cha = this.startHour + this.displayHourNums - 24;
-                let paddingEl = items.slice(0,cha-1);
-                result = result.concat(paddingEl);
-            }
-            return result;
-        },
-        
-        changeRegion(rid){
-            this.regionId = rid;
-            this.regionName = this.regions.find(d => d.region_id == rid)["region_name"];
-        },
-        getPrice(id){
-            console.log("getPrice",id);
         }
-    }
-};
-new Vue({
-  el: '#app',
-  ...option
-});   
+    };
+    new Vue({
+        el: '#app',
+        ...option
+    });
 </script>
 </html>

@@ -1,5 +1,19 @@
 /**
- * 依赖库:axios
+ * 依赖库:<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+ * example
+ *       let world = "LuXingNiao";
+         ffmarket.init(world);
+         let itemid = 5393;//紫檀原木
+         ffmarket.getOnePrice(itemid, {
+                callback: res => {
+                    console.log("获取的当前价格", res);
+                }
+         });
+         ffmarket.getOnePrice(itemid, {
+                callback: res => {
+                    console.log("获取的当前hq价格", res);
+                }, hq: true
+         });
  * apiResList
  * {
     "creatorID": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
@@ -164,7 +178,7 @@ const ffmarket = {
         loadingCallback: () => {
             console.log("loading...");
         },
-        perNum: 5,//每个物品显示的前几个
+        perNum: 8,//每个物品显示的前几个
         result: [],
         //api请求缓存
         /**
@@ -535,9 +549,7 @@ function testGetOnePrice() {
         }, hq: true
     });
 }
-
-testGetOnePrice();
-
+// testGetOnePrice();
 function testCache() {
     console.log("testCache");
 
