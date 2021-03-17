@@ -8,13 +8,63 @@
     <script src="../utils/util.js"></script>
     <script src="../lib/axios.js"></script>
     <script src="../lib/vue.js"></script>
+    <style>
+        .ff-market-col-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ff-market-row-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .ff-market-row-item {
+            flex:0 0 12.5%;
+            align-items: center;
+            align-self: center;
+            border: 1px solid black;
+            border-right: none;
+            height: 100%;
+        }
+
+        .ff-market-row-item:last-child {
+            border-right: 1px solid black;
+        }
+        .ff_market_current_item_bg {
+            background-color: #e76c6c;
+        }
+
+    </style>
 </head>
 <body>
-    <div>F12->Console</div>
+<div>F12->Console</div>
+<div id="app"></div>
 </body>
+<script src="../data/teamcraft/items.js"></script>
 <script src="../utils/market.js"></script>
 <script>
-    ffmarket.init();
+    function testGetManyPrice() {
+        console.log("testGetManyPrice");
+        let world = "LuXingNiao";
+        ffmarket.init(world);
 
+        let itemid = [5393, 5386];//紫檀原木
+        ffmarket.getManyPrice(itemid, {
+            callback: res => {
+                console.log("获取的当前价格", res);
+            }, el: "#app"
+        });
+        ffmarket.getManyPrice(itemid, {
+            callback: res => {
+                console.log("获取的当前价格", res);
+            }, hq: true, el: "#app"
+        });
+    }
+
+    // testGetManyPrice();
 </script>
 </html>

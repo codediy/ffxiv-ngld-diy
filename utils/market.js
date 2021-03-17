@@ -2,14 +2,14 @@
  * 依赖库:<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
  * example
  *       let world = "LuXingNiao";
-         ffmarket.init(world);
-         let itemid = 5393;//紫檀原木
-         ffmarket.getOnePrice(itemid, {
+ ffmarket.init(world);
+ let itemid = 5393;//紫檀原木
+ ffmarket.getOnePrice(itemid, {
                 callback: res => {
                     console.log("获取的当前价格", res);
                 }
          });
-         ffmarket.getOnePrice(itemid, {
+ ffmarket.getOnePrice(itemid, {
                 callback: res => {
                     console.log("获取的当前hq价格", res);
                 }, hq: true
@@ -178,25 +178,48 @@ const ffmarket = {
         loadingCallback: () => {
             console.log("loading...");
         },
-        perNum: 8,//每个物品显示的前几个
-        result: [],
+        perNum: 7,//每个物品显示的前几个
+        /**
+         * {
+         *     data:[
+         *         {
+         *             id: tempItem.itemID,
+                       time: tempItem.lastUploadTime,
+         *             price:[]
+         *             history:[]
+         *         }
+         *     ],
+         *     raw:[]
+         * }
+         */
+        result: {
+            data: [],
+            raw: [],
+        },
         //api请求缓存
         /**
          * option {
          *     dc:"LuXingNiao",//重置dc区
          *     hq:true|false,
-         *     callback:(res) => {}
+         *     callback:(res) => {},
+         *     el:"#price"//价格模板挂在元素
          * }
          */
         isHq: false,//是否只查询HQ
+        isDisplay: false,//是否显示到页面
         resCallback: (res) => {
             console.log("res", res)
         }, //查询回调函数
+        toEl: "",
         checkType: "price_check",//list/history
         PRICE_CHECK: "price_check",
         HISTORY_CHECK: "history_check",
+
         //[{id:0,time:0,raw:{}}]
-        apiResultCache: [],
+        apiResultCache: [], //数据缓存
+        //[{id:0,v:VueObject}]
+        tempResultCache: [], //vue实例缓存 可以用于直接挂载
+
         cacheTime: 60, //缓存1分钟内的数据
         isResult: false,
         now: function () {
@@ -258,24 +281,11 @@ const ffmarket = {
     },
     getOnePrice(itemId, option) {
         ffmarket.handleOption(option);
-        ffmarket.config.checkType = ffmarket.config.PRICE_CHECK;
-        //单个id转换为多个id
-        ffmarket.getManyInfo([1, itemId]);
-    },
-    getOneHistory(itemId, option) {
-        ffmarket.handleOption(option);
-        ffmarket.config.checkType = ffmarket.config.HISTORY_CHECK;
         //单个id转换为多个id
         ffmarket.getManyInfo([1, itemId]);
     },
     getManyPrice(itemIds, option) {
         ffmarket.handleOption(option);
-        ffmarket.config.checkType = ffmarket.config.PRICE_CHECK;
-        ffmarket.getManyInfo(itemIds);
-    },
-    getManyHistory(itemIds, option) {
-        ffmarket.handleOption(option);
-        ffmarket.config.checkType = ffmarket.config.HISTORY_CHECK;
         ffmarket.getManyInfo(itemIds);
     },
     /**
@@ -291,11 +301,13 @@ const ffmarket = {
                 ffmarket.err("dc error", dc)
             }
         }
+        // hq
         if (option.hq) {
             ffmarket.config.isHq = true;
         } else {
             ffmarket.config.isHq = false;
         }
+        // 回调函数的数据处理
         if (option.callback) {
             if (typeof option.callback) {
                 ffmarket.config.resCallback = option.callback
@@ -303,35 +315,45 @@ const ffmarket = {
                 ffmarket.err("callback error");
             }
         }
+        console.log("handleOption", document.querySelector(option.el));
+        // 价格模板挂载元素目标
+        if (option.el && document.querySelector(option.el) != null) {
+            ffmarket.config.isDisplay = true;
+            ffmarket.config.toEl = option.el;
+        }
     },
     getManyInfo(itemIds) {
         this.getPriceCallback(itemIds, datas => {
-            //读取历史数据
+            //多个id数据
             let tempManyResults = {
+                data: [],
                 raw: datas, //原始列表数据
-                result: [],
             };
+            //物品遍历处理
             for (const tempItem of datas) {
                 //单个数据的获取
                 let tempResult = {
                     id: tempItem.itemID,
                     time: tempItem.lastUploadTime,
-                    list: [],
+                    price: [],
+                    history: [],
                 };
                 //处理列表与成交历史
-                if (ffmarket.config.checkType == ffmarket.config.PRICE_CHECK
-                    && tempItem.listings.length > 0) {
-                    tempResult.list = ffmarket.handlePrice(tempItem.listings);
+                if (tempItem.listings.length > 0) {
+                    tempResult.price = ffmarket.handlePrice(tempItem.listings);
                 }
-                if (ffmarket.config.checkType == ffmarket.config.HISTORY_CHECK
-                    && tempItem.recentHistory.length > 0) {
-                    tempResult.list = ffmarket.handleHistory(tempItem.recentHistory);
+                if (tempItem.recentHistory.length > 0) {
+                    tempResult.history = ffmarket.handleHistory(tempItem.recentHistory);
                 }
-                tempManyResults.result.push(tempResult);
+                tempManyResults.data.push(tempResult);
             }
+            //当前缓存列表
             ffmarket.config.result = tempManyResults;
-            //回调处理
             ffmarket.config.resCallback(tempManyResults);
+            // 生成模板并挂载
+            if (ffmarket.config.isDisplay) {
+                ffmarket.displayPriceToTarget();
+            }
         });
     },
     getPriceCallback(itemIds, callback) {
@@ -371,11 +393,99 @@ const ffmarket = {
             }
         }
     },
+    displayPriceToTarget() {
+        console.log("showTemplate", ffmarket.config.result)
+        if (ffmarket.config.result.hasOwnProperty("data")
+            && ffmarket.config.result.data.length > 0) {
+            /**
+             *  板子价格|历史成交     1
+             *      区
+             *      服1
+             *      服2
+             *      服3
+             */
+                //模板内容
+            let vueTemplate = `
+                <div style="width: 90%;margin: 0 auto">  
+                    <div class="ff-market-col-container">
+                        <div class="ff-market-row-container" style="width: fit-content;margin-bottom: 20px">
+                             <div class="ff-market-row-item" 
+                             :class="{ff_market_current_item_bg:currentId == item.id}" 
+                             @click="setCurrentId(item.id)"
+                              v-for="item in items">{{item.id}}</div>
+                        </div>
+                        <!--表头 区服排序-->
+                        <div class="ff-market-row-container" style="height: 50px" >
+                                <div class="ff-market-row-item ff-market-row-head ff-market-row-container">
+                                    <div class="ff-market-row-item" style="border: none">区服</div>
+                                    <div class="ff-market-row-item ff-market-col-container" style="border: none">
+                                        <div>价格</div>
+                                        <div>历史</div>
+                                    </div>
+                                    <div class="ff-market-row-item ff-market-col-container" style="border: none">
+                                        <div>上</div>
+                                        <div>下</div>
+                                    </div>
+                                </div>
+                                <div class="ff-market-row-item" 
+                                    v-for="i in maxNum"
+                                    style="height: 50px;text-align: center">
+                                    <div>{{i}}</div>
+                                </div>
+                        </div>
+                        <!--dc-->
+                        <div class="ff-market-row-container" style="justify-content: start;height: 80px">
+                              <div class="ff-market-row-item ff-market-row-head">全区</div>
+                              <div class="ff-market-row-item" style="flex:1 0 12.5%;" v-for="item in currentItem.dc">{{item}}</div>
+                        </div>
+                        <!--world-->
+                        <div class="ff-market-row-container"  style="justify-content: start;height: 80px" 
+                        v-for="tempWorld in currentItem.world">
+                              <div class="ff-market-row-item ff-market-row-head">{{tempWorld.world}}</div>
+                              <div class="ff-market-row-item" v-for="item in tempWorld.data">{{item}}</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            `;
+            let tempConfig = {
+                template: vueTemplate,
+                data() {
+                    return {
+                        currentId: 0, //物品id
+                        currentPage: 0,//上下翻页
+                        currentType: "price",//price|history
+                        maxNum: 7,
+                        items: ffmarket.config.result.data
+                    }
+                },
+                computed:{
+                    currentItem(){
+                        return this.items.find(d => d.id == this.currentId)[this.currentType];
+                    }
+                },
+                created() {
+                    this.currentId = this.items[0]["id"];
+                },
+                methods: {
+                    setCurrentId(id) {
+                        this.currentId = id;
+                    },
+                    setCurrentType(type){
+                        if(type == 'price' || type == "history"){
+                            this.currentType = type;
+                        }
+                    }
+                }
+            };
+            let priceComponent = Vue.extend(tempConfig)
+            new priceComponent().$mount(ffmarket.config.toEl);
+        }
+    },
     /**
      *
      * @param rawList
-     * @param option
-     * @returns {[]}
+     * @returns {{world: [], dc: []}}
      */
     handlePrice(rawList) {
         let tempResultList = {"dc": [], "world": []};
@@ -385,7 +495,10 @@ const ffmarket = {
                 if (ffmarket.config.isHq && !tempItem.hq) {
                     continue;
                 }
-                let tempWorld = tempItem.worldName ? tempItem.worldName : ffmarket.config.currentDc;
+                let tempWorld = tempItem.worldName
+                    ? tempItem.worldName
+                    : ffmarket.config.currentDc;
+
                 tempResultList.dc.push({
                     price: tempItem.pricePerUnit,
                     num: tempItem.quantity,
@@ -399,7 +512,11 @@ const ffmarket = {
         tempResultList.world = ffmarket.handleWorldData(rawList);
         return tempResultList;
     },
-
+    /**
+     *
+     * @param rawList
+     * @returns {{world: [], dc: []}}
+     */
     handleHistory(rawList) {
         let tempResultList = {"dc": [], "world": []};
         for (const tempItem of rawList) {
@@ -423,6 +540,11 @@ const ffmarket = {
         tempResultList.world = ffmarket.handleWorldData(rawList);
         return tempResultList;
     },
+    /**
+     *
+     * @param worldName
+     * @returns {string}
+     */
     handleWorldName(worldName) {
         let tempWorld = worldName ? worldName : ffmarket.config.currentDc;
         let tempChsName = tempWorld;
@@ -432,20 +554,41 @@ const ffmarket = {
         }
         return tempChsName;
     },
+    getAllWorldName() {
+        let result = [];
+        let worlds = dcs[ffmarket.config.currentDc];
+        for (const tempWorld of worlds) {
+            let tempChsName = tempWorld;
+            let chsNameIndex = Object.values(ffChsName).findIndex(d => d.en == worldName);
+            if (chsNameIndex >= 0) {
+                tempChsName = Object.values(ffChsName)[chsNameIndex]["name"];
+            }
+            result.push({
+                en: tempWorld,
+                zh: tempChsName
+            })
+        }
+        return result;
+    },
+    /**
+     *
+     * @param rawList
+     * @returns {[]}
+     */
     handleWorldData(rawList) {
-        let result = [];//[{world:[],data:[]}]
+        let result = [];//[{world:"",data:[]}]
         let worlds = dcs[ffmarket.config.currentDc];
         for (const tempWorld of worlds) {
             let tempWorldResult = {
                 world: ffmarket.handleWorldName(tempWorld),
                 data: []
             };
-            tempWorldResult.data.push(rawList
+            tempWorldResult.data = (rawList
                 .filter(d => {
                     return d.worldName === tempWorld && d.hq === ffmarket.config.isHq;
                 })
                 .map(tempItem => {
-                    if(ffmarket.config.checkType == ffmarket.config.PRICE_CHECK){
+                    if (ffmarket.config.checkType == ffmarket.config.PRICE_CHECK) {
                         return {
                             price: tempItem.pricePerUnit,
                             num: tempItem.quantity,
@@ -454,7 +597,7 @@ const ffmarket = {
                             hq: tempItem.hq
                         }
                     }
-                    if(ffmarket.config.checkType == ffmarket.config.HISTORY_CHECK){
+                    if (ffmarket.config.checkType == ffmarket.config.HISTORY_CHECK) {
                         return {
                             price: tempItem.pricePerUnit,
                             num: tempItem.quantity,
@@ -549,6 +692,7 @@ function testGetOnePrice() {
         }, hq: true
     });
 }
+
 // testGetOnePrice();
 function testCache() {
     console.log("testCache");
@@ -595,24 +739,7 @@ function testCache() {
 }
 
 // testCache();
-function testGetOneHistory() {
-    console.log("testGetOneHistory");
-    let world = "LuXingNiao";
-    ffmarket.init(world);
-    let itemid = 5393;//紫檀原木
-    ffmarket.getOneHistory(itemid, {
-        callback: res => {
-            console.log("获取历史成交", res);
-        }
-    });
-    ffmarket.getOneHistory(itemid, {
-        callback: res => {
-            console.log("获取历史成交", res);
-        }, hq: true
-    });
-}
 
-// testGetOneHistory();
 function testGetManyPrice() {
     console.log("testGetManyPrice");
     let world = "LuXingNiao";
@@ -622,33 +749,15 @@ function testGetManyPrice() {
     ffmarket.getManyPrice(itemid, {
         callback: res => {
             console.log("获取的当前价格", res);
-        }
+        }, el: "#app"
     });
     ffmarket.getManyPrice(itemid, {
         callback: res => {
             console.log("获取的当前价格", res);
-        }, hq: true
+        }, hq: true, el: "#app"
     });
 }
 
 // testGetManyPrice();
-function testGetManyHistory() {
-    console.log("testGetManyHistory");
-    let world = "LuXingNiao";
-    ffmarket.init(world);
 
-    let itemid = [5393, 5386];//紫檀原木
-    ffmarket.getManyHistory(itemid, {
-        callback: res => {
-            console.log("获取历史成交", res);
-        }
-    });
-    ffmarket.getManyHistory(itemid, {
-        callback: res => {
-            console.log("获取历史成交", res);
-        }, hq: true
-    });
-}
-
-// testGetManyHistory();
 
