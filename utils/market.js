@@ -417,12 +417,12 @@ const ffmarket = {
                         <!--表头 区服排序-->
                         <div class="ff-market-row-container" style="height: 50px" >
                                 <div class="ff-market-row-item ff-market-row-head ff-market-row-container">
-                                    <div class="ff-market-row-item" style="border: none">区服</div>
-                                    <div class="ff-market-row-item ff-market-col-container" style="border: none">
+                                    <div class="ff-market-row-item ff-market-center" style="flex:1;border: none">区服</div>
+                                    <div class="ff-market-row-item ff-market-center ff-market-col-container" style="flex:1;border: none">
                                         <div>价格</div>
                                         <div>历史</div>
                                     </div>
-                                    <div class="ff-market-row-item ff-market-col-container" style="border: none">
+                                    <div class="ff-market-row-item ff-market-center ff-market-col-container" style="flex:1;border: none">
                                         <div>上</div>
                                         <div>下</div>
                                     </div>
@@ -430,19 +430,23 @@ const ffmarket = {
                                 <div class="ff-market-row-item" 
                                     v-for="i in maxNum"
                                     style="height: 50px;text-align: center">
-                                    <div>{{i}}</div>
+                                    <div class="ff-market-center">{{i}}</div>
                                 </div>
                         </div>
-                        <!--dc-->
-                        <div class="ff-market-row-container" style="justify-content: start;height: 80px">
-                              <div class="ff-market-row-item ff-market-row-head">全区</div>
-                              <div class="ff-market-row-item" style="flex:1 0 12.5%;" v-for="item in currentItem.dc">{{item}}</div>
-                        </div>
                         <!--world-->
-                        <div class="ff-market-row-container"  style="justify-content: start;height: 80px" 
-                        v-for="tempWorld in currentItem.world">
-                              <div class="ff-market-row-item ff-market-row-head">{{tempWorld.world}}</div>
-                              <div class="ff-market-row-item" v-for="item in tempWorld.data">{{item}}</div>
+                        <div class="ff-market-row-container"  style="justify-content: start;height: 60px" 
+                        v-for="tempWorld in currentItem">
+                              <div class="ff-market-row-item ff-market-row-head">
+                                <div class="ff-market-center">{{tempWorld.world}}</div>
+                              </div>
+                              <div class="ff-market-row-item ff-market-col-container" v-for="item in tempWorld.data">
+                                <div class="ff-market-cell-item">
+                                    <span v-if="item.hq">HQ</span>
+                                    <span v-if="!item.hq">NQ</span>
+                                    <span>{{item.worldName}}</span>
+                                </div>
+                                <div class="ff-market-cell-item">{{item.price}}×{{item.num}}={{item.total}}</div>
+                              </div>
                         </div>
                     </div>
                     
@@ -488,9 +492,10 @@ const ffmarket = {
      * @returns {{world: [], dc: []}}
      */
     handlePrice(rawList) {
-        let tempResultList = {"dc": [], "world": []};
+        let tempResultList = []//[{world:"",data:[]}];
+        let dcResult = {world:"全区",data:[]}
         for (const tempItem of rawList) {
-            if (tempResultList.dc.length < ffmarket.config.perNum) {
+            if (dcResult.data.length < ffmarket.config.perNum) {
                 //检查是否需要hq
                 if (ffmarket.config.isHq && !tempItem.hq) {
                     continue;
@@ -499,7 +504,7 @@ const ffmarket = {
                     ? tempItem.worldName
                     : ffmarket.config.currentDc;
 
-                tempResultList.dc.push({
+                dcResult.data.push({
                     price: tempItem.pricePerUnit,
                     num: tempItem.quantity,
                     total: tempItem.total,
@@ -509,24 +514,26 @@ const ffmarket = {
             }
         }
         //取出每个区的
-        tempResultList.world = ffmarket.handleWorldData(rawList);
+        tempResultList.push(dcResult);
+        tempResultList = tempResultList.concat(ffmarket.handleWorldData(rawList));
         return tempResultList;
     },
     /**
      *
      * @param rawList
-     * @returns {{world: [], dc: []}}
+     * @returns {[]}
      */
     handleHistory(rawList) {
-        let tempResultList = {"dc": [], "world": []};
+        let tempResultList = []//[{world:"",data:[]}];
+        let dcResult = {world:"全区",data:[]}
         for (const tempItem of rawList) {
-            if (tempResultList.dc.length < ffmarket.config.perNum) {
+            if (dcResult.data.length <= ffmarket.config.perNum) {
                 //检查是否需要hq
                 if (ffmarket.config.isHq && !tempItem.hq) {
                     continue;
                 }
                 let tempWorld = tempItem.worldName ? tempItem.worldName : ffmarket.config.currentDc;
-                tempResultList.dc.push({
+                dcResult.data.push({
                     price: tempItem.pricePerUnit,
                     num: tempItem.quantity,
                     total: tempItem.total,
@@ -536,8 +543,10 @@ const ffmarket = {
                 })
             }
         }
+        tempResultList.push(dcResult);
         //取出每个区的
-        tempResultList.world = ffmarket.handleWorldData(rawList);
+        tempResultList = tempResultList.concat(ffmarket.handleWorldData(rawList));
+        console.log("dd",tempResultList);
         return tempResultList;
     },
     /**
@@ -750,11 +759,6 @@ function testGetManyPrice() {
         callback: res => {
             console.log("获取的当前价格", res);
         }, el: "#app"
-    });
-    ffmarket.getManyPrice(itemid, {
-        callback: res => {
-            console.log("获取的当前价格", res);
-        }, hq: true, el: "#app"
     });
 }
 

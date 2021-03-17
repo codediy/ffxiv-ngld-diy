@@ -13,3 +13,4 @@
 2. gathing-log-pages.json            每个子分类下的采集物品
 3. gathing-point-to-node.json        每个采集物品对应的采集点
 4. node.json                         每个采集点的信息
+5. 
