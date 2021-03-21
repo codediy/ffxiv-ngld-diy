@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IndexedDB</title>
+    <script src="../utils/util.js"></script>
+
+</head>
+
+<body>
+    <div>indexedDBTest</div>
+</body>
+
+<!--ffDb-->
+<script src="../lib/dexie.js"></script>
+<script src="../lib/axios.js"></script>
+<script src="../utils/ffDb.js"></script>
+
+
+<script>
+    // test Promise
+    let a = function () {
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                res("a");
+            }, 1000)
+        })
+    }
+
+    let b = function (data) {
+        return new Promise((res, rej) => {
+            res(data + "b");
+        })
+    }
+
+    let c = function (data) {
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                res(data + 'c');
+            }, 500);
+        })
+    }
+    
+    function testPromise(){
+        console.log(a().then((data) => {
+            return b(data);
+        }).then((data) => {
+            return c(data);
+        }));
+
+        a().then((data) => {
+            return b(data);
+        }).then((data) => {
+            return c(data);
+        }).then(data => {
+            console.log(data);
+        });
+
+        function queue(arr){
+            var seq = Promise.resolve();
+            arr.forEach((item) => {
+                seq = seq.then(item);
+            })
+            return seq;
+        }
+        queue([a,b,c])
+        .then(data => {
+            console.log("ddd",data);
+        })
+    }
+</script>
+<script>
+    function testffDb() {
+        ffDb.init();
+        ffDb.exportData();
+    }
+    testffDb();
+    function testDexie() {
+        let db = new Dexie("friend_database");
+        db.version(1).stores({
+            friends: "name,shoeSize"
+        });
+
+        db.friends.put({
+            name: "Nicolas",
+            shoeSize: 8
+        }).then(() => {
+            return db.friends.get("Nicolas");
+            console.log("dd", db.friends.get("Nicolas"));
+        }).then(friend => {
+            console.log("cc", friend.shoeSize);
+        }).catch(e => {
+            console.log("ee", e);
+        })
+    }
+    // testDexie();
+    function testDb() {
+        let dbName = "testDb";
+        let v = 1;
+        let db;
+        //打开数据库
+        console.log("aaa");
+        let request = indexedDB.open(dbName, v);
+        request.onsuccess = function (e) {
+            db = request.result;
+            console.log('ddd',"打开成功");
+
+            let personTable = db.transaction(['person'], 'readwrite')
+                .objectStore('person');
+
+            //add
+            // let addRequest = personTable.add({
+            //     id: 1,
+            //     name: '张三2',
+            //     age: 24,
+            //     email: 'zhangsan@example.com'
+            // });
+            // addRequest.onsuccess = function (event) {
+            //     console.log('数据写入成功');
+            // };
+            //
+            // addRequest.onerror = function (event) {
+            //     console.log('数据写入失败',event);
+            // }
+
+            // read
+            // let readRequest = personTable.get(1);
+            // readRequest.onerror = function(event) {
+            //     console.log('事务失败',event);
+            // };
+            //
+            // readRequest.onsuccess = function( event) {
+            //     if (readRequest.result) {
+            //         console.log('Name: ' + readRequest.result.name);
+            //         console.log('Age: ' + readRequest.result.age);
+            //         console.log('Email: ' + readRequest.result.email);
+            //     } else {
+            //         console.log('未获得数据记录');
+            //     }
+            // };
+
+            // readAll
+            // personTable.openCursor().onsuccess = function (event) {
+            //     let cursor = event.target.result;
+            //
+            //     if (cursor) {
+            //         console.log('Id: ' + cursor.key);
+            //         console.log('Name: ' + cursor.value.name);
+            //         console.log('Age: ' + cursor.value.age);
+            //         console.log('Email: ' + cursor.value.email);
+            //         cursor.continue();
+            //     } else {
+            //         console.log('没有更多数据了！');
+            //     }
+            // }
+
+            // update
+            // let updateRequest = personTable.put({ id: 1, name: '李四', age: 35, email: 'lisi@example.com' });
+            // updateRequest.onsuccess = function (event) {
+            //     console.log('数据更新成功');
+            // };
+            //
+            // updateRequest.onerror = function (event) {
+            //     console.log('数据更新失败');
+            // }
+
+            // delete
+            // let deleteRequest = personTable.delete(1);
+            //
+            // deleteRequest.onsuccess = function (event) {
+            //     console.log('数据删除成功');
+            // };
+
+            // index
+            // let nameIndex = personTable.index('name');
+            // let indexRequest = nameIndex.get('李四');
+            // indexRequest.onsuccess = function (e) {
+            //     console.log('indexRequest: ' + JSON.stringify(e.target.result));
+            // }
+        }
+        request.onerror = function (e) {
+            console.log("打开失败");
+        }
+        request.onupgradeneeded = function (event) {
+            db = event.target.result;
+            let objectStore;
+            if (!db.objectStoreNames.contains('person')) {
+                //table
+                objectStore = db.createObjectStore('person', { keyPath: 'id' });
+                //index
+                objectStore.createIndex('name', 'name', { unique: false });
+                objectStore.createIndex('email', 'email', { unique: true });
+            }
+            console.log("新建成功")
+        }
+    }
+    // testDb();
+</script>
+
+</html>

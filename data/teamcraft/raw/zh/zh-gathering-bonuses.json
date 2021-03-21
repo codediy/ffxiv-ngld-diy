@@ -1,0 +1,5612 @@
+{
+  "1": {
+    "value": 1,
+    "conditionValue": 30,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "灵巧 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "2": {
+    "value": 10,
+    "conditionValue": 2,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "连锁 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "3": {
+    "value": 15,
+    "conditionValue": 20,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "灵巧 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "4": {
+    "value": 20,
+    "conditionValue": 30,
+    "bonus": {
+      "zh": "低于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "灵巧 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "5": {
+    "value": 5,
+    "conditionValue": 42,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "6": {
+    "value": 5,
+    "conditionValue": 52,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "7": {
+    "value": 5,
+    "conditionValue": 62,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "8": {
+    "value": 5,
+    "conditionValue": 81,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "9": {
+    "value": 5,
+    "conditionValue": 98,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "10": {
+    "value": 5,
+    "conditionValue": 126,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "11": {
+    "value": 5,
+    "conditionValue": 153,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "12": {
+    "value": 5,
+    "conditionValue": 182,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "13": {
+    "value": 5,
+    "conditionValue": 198,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "14": {
+    "value": 5,
+    "conditionValue": 214,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "15": {
+    "value": 1,
+    "conditionValue": 34,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "16": {
+    "value": 1,
+    "conditionValue": 57,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "17": {
+    "value": 1,
+    "conditionValue": 89,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "18": {
+    "value": 1,
+    "conditionValue": 128,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "19": {
+    "value": 1,
+    "conditionValue": 171,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "20": {
+    "value": 1,
+    "conditionValue": 194,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "21": {
+    "value": 1,
+    "conditionValue": 216,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "22": {
+    "value": 1,
+    "conditionValue": 237,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "23": {
+    "value": 1,
+    "conditionValue": 263,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "24": {
+    "value": 1,
+    "conditionValue": 295,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "25": {
+    "value": 30,
+    "conditionValue": 84,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "26": {
+    "value": 30,
+    "conditionValue": 104,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "27": {
+    "value": 30,
+    "conditionValue": 124,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "28": {
+    "value": 30,
+    "conditionValue": 144,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "29": {
+    "value": 30,
+    "conditionValue": 164,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "30": {
+    "value": 30,
+    "conditionValue": 184,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "31": {
+    "value": 30,
+    "conditionValue": 204,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "32": {
+    "value": 30,
+    "conditionValue": 224,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "33": {
+    "value": 30,
+    "conditionValue": 244,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "34": {
+    "value": 30,
+    "conditionValue": 264,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "35": {
+    "value": 1,
+    "conditionValue": 414,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "36": {
+    "value": 1,
+    "conditionValue": 429,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "37": {
+    "value": 1,
+    "conditionValue": 436,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "38": {
+    "value": 1,
+    "conditionValue": 486,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "39": {
+    "value": 1,
+    "conditionValue": 493,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "40": {
+    "value": 1,
+    "conditionValue": 515,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "41": {
+    "value": 1,
+    "conditionValue": 521,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "42": {
+    "value": 1,
+    "conditionValue": 542,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "43": {
+    "value": 1,
+    "conditionValue": 545,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "44": {
+    "value": 1,
+    "conditionValue": 571,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "45": {
+    "value": 1,
+    "conditionValue": 33,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "46": {
+    "value": 1,
+    "conditionValue": 55,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "47": {
+    "value": 1,
+    "conditionValue": 85,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "48": {
+    "value": 1,
+    "conditionValue": 122,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "49": {
+    "value": 1,
+    "conditionValue": 163,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "50": {
+    "value": 1,
+    "conditionValue": 185,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "51": {
+    "value": 1,
+    "conditionValue": 206,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "52": {
+    "value": 1,
+    "conditionValue": 226,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "53": {
+    "value": 1,
+    "conditionValue": 251,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "54": {
+    "value": 1,
+    "conditionValue": 281,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "55": {
+    "value": 30,
+    "conditionValue": 271,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "56": {
+    "value": 1,
+    "conditionValue": 302,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "57": {
+    "value": 1,
+    "conditionValue": 574,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "59": {
+    "value": 1,
+    "conditionValue": 804,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "60": {
+    "value": 1,
+    "conditionValue": 860,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "61": {
+    "value": 1,
+    "conditionValue": 916,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "62": {
+    "value": 1,
+    "conditionValue": 1169,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "63": {
+    "value": 1,
+    "conditionValue": 1356,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "64": {
+    "value": 1,
+    "conditionValue": 2040,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "65": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "66": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "67": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "68": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "69": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "70": {
+    "value": 1,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "71": {
+    "value": 30,
+    "conditionValue": 688,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "72": {
+    "value": 30,
+    "conditionValue": 688,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "73": {
+    "value": 30,
+    "conditionValue": 784,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "74": {
+    "value": 30,
+    "conditionValue": 1200,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "75": {
+    "value": 30,
+    "conditionValue": 1350,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "76": {
+    "value": 30,
+    "conditionValue": 1840,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "78": {
+    "value": 1,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "79": {
+    "value": 1,
+    "conditionValue": 2244,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "80": {
+    "value": 30,
+    "conditionValue": 2140,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "84": {
+    "value": 10,
+    "conditionValue": 90,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "85": {
+    "value": 10,
+    "conditionValue": 90,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "86": {
+    "value": 10,
+    "conditionValue": 90,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "87": {
+    "value": 10,
+    "conditionValue": 90,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "92": {
+    "value": 10,
+    "conditionValue": 42,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "93": {
+    "value": 10,
+    "conditionValue": 42,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "94": {
+    "value": 10,
+    "conditionValue": 54,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "95": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "96": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "97": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "98": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "99": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "100": {
+    "value": 10,
+    "conditionValue": 112,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "101": {
+    "value": 10,
+    "conditionValue": 112,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "102": {
+    "value": 10,
+    "conditionValue": 112,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "103": {
+    "value": 10,
+    "conditionValue": 112,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "104": {
+    "value": 10,
+    "conditionValue": 138,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "105": {
+    "value": 10,
+    "conditionValue": 138,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "106": {
+    "value": 10,
+    "conditionValue": 138,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "108": {
+    "value": 1,
+    "conditionValue": 54,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "109": {
+    "value": 1,
+    "conditionValue": 105,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "110": {
+    "value": 1,
+    "conditionValue": 150,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "111": {
+    "value": 1,
+    "conditionValue": 188,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "112": {
+    "value": 1,
+    "conditionValue": 228,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "113": {
+    "value": 1,
+    "conditionValue": 323,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "114": {
+    "value": 1,
+    "conditionValue": 523,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "115": {
+    "value": 1,
+    "conditionValue": 619,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "116": {
+    "value": 1,
+    "conditionValue": 889,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "117": {
+    "value": 1,
+    "conditionValue": 989,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "118": {
+    "value": 1,
+    "conditionValue": 1546,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "119": {
+    "value": 1,
+    "conditionValue": 400,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "120": {
+    "value": 1,
+    "conditionValue": 429,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "121": {
+    "value": 1,
+    "conditionValue": 486,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "122": {
+    "value": 1,
+    "conditionValue": 515,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "123": {
+    "value": 1,
+    "conditionValue": 542,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "124": {
+    "value": 1,
+    "conditionValue": 571,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "125": {
+    "value": 1,
+    "conditionValue": 589,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "126": {
+    "value": 1,
+    "conditionValue": 597,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "127": {
+    "value": 1,
+    "conditionValue": 652,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "128": {
+    "value": 1,
+    "conditionValue": 668,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "129": {
+    "value": 1,
+    "conditionValue": 694,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "130": {
+    "value": 1,
+    "conditionValue": 25,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "131": {
+    "value": 1,
+    "conditionValue": 88,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "132": {
+    "value": 1,
+    "conditionValue": 150,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "133": {
+    "value": 1,
+    "conditionValue": 182,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "134": {
+    "value": 1,
+    "conditionValue": 226,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "135": {
+    "value": 1,
+    "conditionValue": 321,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "136": {
+    "value": 1,
+    "conditionValue": 499,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "137": {
+    "value": 1,
+    "conditionValue": 611,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "138": {
+    "value": 1,
+    "conditionValue": 874,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "139": {
+    "value": 1,
+    "conditionValue": 989,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "140": {
+    "value": 1,
+    "conditionValue": 1535,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "141": {
+    "value": 2,
+    "conditionValue": 25,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "142": {
+    "value": 2,
+    "conditionValue": 88,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "143": {
+    "value": 2,
+    "conditionValue": 150,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "144": {
+    "value": 2,
+    "conditionValue": 182,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "145": {
+    "value": 2,
+    "conditionValue": 226,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "146": {
+    "value": 2,
+    "conditionValue": 321,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "147": {
+    "value": 2,
+    "conditionValue": 499,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "148": {
+    "value": 3,
+    "conditionValue": 611,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "149": {
+    "value": 3,
+    "conditionValue": 874,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "150": {
+    "value": 3,
+    "conditionValue": 989,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "151": {
+    "value": 3,
+    "conditionValue": 1535,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "152": {
+    "value": 3,
+    "conditionValue": 25,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "153": {
+    "value": 3,
+    "conditionValue": 88,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "154": {
+    "value": 3,
+    "conditionValue": 150,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "155": {
+    "value": 3,
+    "conditionValue": 182,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "156": {
+    "value": 3,
+    "conditionValue": 226,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "157": {
+    "value": 4,
+    "conditionValue": 321,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "158": {
+    "value": 4,
+    "conditionValue": 499,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "159": {
+    "value": 5,
+    "conditionValue": 611,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "160": {
+    "value": 5,
+    "conditionValue": 874,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "161": {
+    "value": 5,
+    "conditionValue": 989,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "162": {
+    "value": 5,
+    "conditionValue": 1535,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "163": {
+    "value": 5,
+    "conditionValue": 836,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "164": {
+    "value": 1,
+    "conditionValue": 2421,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "165": {
+    "value": 2,
+    "conditionValue": 2421,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "166": {
+    "value": 1,
+    "conditionValue": 2345,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "167": {
+    "value": 2,
+    "conditionValue": 2345,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "168": {
+    "value": 1,
+    "conditionValue": 54,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "169": {
+    "value": 1,
+    "conditionValue": 25,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "170": {
+    "value": 1,
+    "conditionValue": 400,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "171": {
+    "value": 1,
+    "conditionValue": 54,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "172": {
+    "value": 1,
+    "conditionValue": 2740,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "173": {
+    "value": 2,
+    "conditionValue": 2740,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "174": {
+    "value": 1,
+    "conditionValue": 25,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "175": {
+    "value": 1,
+    "conditionValue": 2642,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "176": {
+    "value": 2,
+    "conditionValue": 2642,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "177": {
+    "value": 1,
+    "conditionValue": 400,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "178": {
+    "value": 5,
+    "conditionValue": 858,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "259": {
+    "value": 10,
+    "conditionValue": 165,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "260": {
+    "value": 10,
+    "conditionValue": 165,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "261": {
+    "value": 10,
+    "conditionValue": 165,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "262": {
+    "value": 10,
+    "conditionValue": 187,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "263": {
+    "value": 10,
+    "conditionValue": 187,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "264": {
+    "value": 10,
+    "conditionValue": 187,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "265": {
+    "value": 10,
+    "conditionValue": 204,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "266": {
+    "value": 10,
+    "conditionValue": 204,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "267": {
+    "value": 10,
+    "conditionValue": 204,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "268": {
+    "value": 10,
+    "conditionValue": 221,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "269": {
+    "value": 10,
+    "conditionValue": 221,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "270": {
+    "value": 10,
+    "conditionValue": 221,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "271": {
+    "value": 10,
+    "conditionValue": 42,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "272": {
+    "value": 10,
+    "conditionValue": 42,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "273": {
+    "value": 10,
+    "conditionValue": 54,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "274": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "275": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "276": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "277": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "278": {
+    "value": 10,
+    "conditionValue": 69,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "279": {
+    "value": 10,
+    "conditionValue": 90,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "280": {
+    "value": 10,
+    "conditionValue": 90,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "281": {
+    "value": 10,
+    "conditionValue": 90,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "282": {
+    "value": 10,
+    "conditionValue": 90,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "283": {
+    "value": 10,
+    "conditionValue": 112,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "284": {
+    "value": 10,
+    "conditionValue": 112,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "285": {
+    "value": 10,
+    "conditionValue": 112,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "286": {
+    "value": 10,
+    "conditionValue": 112,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "287": {
+    "value": 10,
+    "conditionValue": 138,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "288": {
+    "value": 10,
+    "conditionValue": 138,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "289": {
+    "value": 10,
+    "conditionValue": 138,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "290": {
+    "value": 10,
+    "conditionValue": 165,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "291": {
+    "value": 10,
+    "conditionValue": 165,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "292": {
+    "value": 10,
+    "conditionValue": 165,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "293": {
+    "value": 10,
+    "conditionValue": 187,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "294": {
+    "value": 10,
+    "conditionValue": 187,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "295": {
+    "value": 10,
+    "conditionValue": 187,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "296": {
+    "value": 10,
+    "conditionValue": 204,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "297": {
+    "value": 10,
+    "conditionValue": 204,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "298": {
+    "value": 10,
+    "conditionValue": 204,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "299": {
+    "value": 10,
+    "conditionValue": 221,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "300": {
+    "value": 10,
+    "conditionValue": 221,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "301": {
+    "value": 10,
+    "conditionValue": 221,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "327": {
+    "value": 5,
+    "conditionValue": 444,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "328": {
+    "value": 5,
+    "conditionValue": 451,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "329": {
+    "value": 5,
+    "conditionValue": 453,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "330": {
+    "value": 5,
+    "conditionValue": 455,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "331": {
+    "value": 5,
+    "conditionValue": 457,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "332": {
+    "value": 5,
+    "conditionValue": 461,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "333": {
+    "value": 5,
+    "conditionValue": 498,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "334": {
+    "value": 5,
+    "conditionValue": 505,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "335": {
+    "value": 5,
+    "conditionValue": 510,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "336": {
+    "value": 1,
+    "conditionValue": 395,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "337": {
+    "value": 1,
+    "conditionValue": 460,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "338": {
+    "value": 1,
+    "conditionValue": 462,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "339": {
+    "value": 1,
+    "conditionValue": 493,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "340": {
+    "value": 1,
+    "conditionValue": 495,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "341": {
+    "value": 1,
+    "conditionValue": 499,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "342": {
+    "value": 1,
+    "conditionValue": 504,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "343": {
+    "value": 1,
+    "conditionValue": 510,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "344": {
+    "value": 1,
+    "conditionValue": 515,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "345": {
+    "value": 1,
+    "conditionValue": 571,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "346": {
+    "value": 1,
+    "conditionValue": 577,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "347": {
+    "value": 1,
+    "conditionValue": 587,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "348": {
+    "value": 1,
+    "conditionValue": 589,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "349": {
+    "value": 1,
+    "conditionValue": 589,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "350": {
+    "value": 1,
+    "conditionValue": 591,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "351": {
+    "value": 1,
+    "conditionValue": 593,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "352": {
+    "value": 1,
+    "conditionValue": 595,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "353": {
+    "value": 1,
+    "conditionValue": 597,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "354": {
+    "value": 1,
+    "conditionValue": 597,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "355": {
+    "value": 30,
+    "conditionValue": 508,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "356": {
+    "value": 30,
+    "conditionValue": 516,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "357": {
+    "value": 30,
+    "conditionValue": 518,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "358": {
+    "value": 30,
+    "conditionValue": 520,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "359": {
+    "value": 30,
+    "conditionValue": 523,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "360": {
+    "value": 30,
+    "conditionValue": 527,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "361": {
+    "value": 30,
+    "conditionValue": 532,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "362": {
+    "value": 30,
+    "conditionValue": 539,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "363": {
+    "value": 30,
+    "conditionValue": 544,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "364": {
+    "value": 1,
+    "conditionValue": 577,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "365": {
+    "value": 1,
+    "conditionValue": 587,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "366": {
+    "value": 1,
+    "conditionValue": 589,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "367": {
+    "value": 1,
+    "conditionValue": 589,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "368": {
+    "value": 1,
+    "conditionValue": 591,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "369": {
+    "value": 1,
+    "conditionValue": 593,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "370": {
+    "value": 1,
+    "conditionValue": 595,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "371": {
+    "value": 1,
+    "conditionValue": 597,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "372": {
+    "value": 1,
+    "conditionValue": 597,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "373": {
+    "value": 1,
+    "conditionValue": 377,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "374": {
+    "value": 1,
+    "conditionValue": 439,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "375": {
+    "value": 1,
+    "conditionValue": 440,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "376": {
+    "value": 1,
+    "conditionValue": 470,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "377": {
+    "value": 1,
+    "conditionValue": 472,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "378": {
+    "value": 1,
+    "conditionValue": 476,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "379": {
+    "value": 1,
+    "conditionValue": 480,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "380": {
+    "value": 1,
+    "conditionValue": 486,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "381": {
+    "value": 1,
+    "conditionValue": 491,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "382": {
+    "value": 30,
+    "conditionValue": 508,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "383": {
+    "value": 30,
+    "conditionValue": 512,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "384": {
+    "value": 30,
+    "conditionValue": 523,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "385": {
+    "value": 30,
+    "conditionValue": 527,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "386": {
+    "value": 30,
+    "conditionValue": 544,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "387": {
+    "value": 30,
+    "conditionValue": 688,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "388": {
+    "value": 30,
+    "conditionValue": 688,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "389": {
+    "value": 30,
+    "conditionValue": 784,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "390": {
+    "value": 1,
+    "conditionValue": 395,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "391": {
+    "value": 1,
+    "conditionValue": 400,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "392": {
+    "value": 1,
+    "conditionValue": 495,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "393": {
+    "value": 1,
+    "conditionValue": 499,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "394": {
+    "value": 1,
+    "conditionValue": 515,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "395": {
+    "value": 1,
+    "conditionValue": 767,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "396": {
+    "value": 1,
+    "conditionValue": 821,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "397": {
+    "value": 1,
+    "conditionValue": 874,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "398": {
+    "value": 1,
+    "conditionValue": 577,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "399": {
+    "value": 1,
+    "conditionValue": 583,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "400": {
+    "value": 1,
+    "conditionValue": 591,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "401": {
+    "value": 1,
+    "conditionValue": 593,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "402": {
+    "value": 1,
+    "conditionValue": 597,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "403": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "404": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "405": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "406": {
+    "value": 1,
+    "conditionValue": 495,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "407": {
+    "value": 1,
+    "conditionValue": 591,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "409": {
+    "value": 20,
+    "conditionValue": 1840,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "410": {
+    "value": 30,
+    "conditionValue": 1840,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "411": {
+    "value": 1,
+    "conditionValue": 1856,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "412": {
+    "value": 2,
+    "conditionValue": 1856,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "413": {
+    "value": 1,
+    "conditionValue": 696,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "414": {
+    "value": 2,
+    "conditionValue": 696,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "415": {
+    "value": 20,
+    "conditionValue": 1898,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "416": {
+    "value": 30,
+    "conditionValue": 1898,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "417": {
+    "value": 1,
+    "conditionValue": 1929,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "418": {
+    "value": 2,
+    "conditionValue": 1929,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "419": {
+    "value": 1,
+    "conditionValue": 714,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "420": {
+    "value": 2,
+    "conditionValue": 714,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "425": {
+    "value": 20,
+    "conditionValue": 2139,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "426": {
+    "value": 30,
+    "conditionValue": 2139,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "427": {
+    "value": 1,
+    "conditionValue": 2162,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "428": {
+    "value": 2,
+    "conditionValue": 2162,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "429": {
+    "value": 1,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "430": {
+    "value": 2,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "431": {
+    "value": 20,
+    "conditionValue": 2156,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "432": {
+    "value": 30,
+    "conditionValue": 2156,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "433": {
+    "value": 1,
+    "conditionValue": 2192,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "434": {
+    "value": 2,
+    "conditionValue": 2192,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "435": {
+    "value": 1,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "436": {
+    "value": 2,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "494": {
+    "value": 10,
+    "conditionValue": 221,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "495": {
+    "value": 10,
+    "conditionValue": 448,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "496": {
+    "value": 10,
+    "conditionValue": 453,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "497": {
+    "value": 10,
+    "conditionValue": 457,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "498": {
+    "value": 10,
+    "conditionValue": 498,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "534": {
+    "value": 10,
+    "conditionValue": 602,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "535": {
+    "value": 10,
+    "conditionValue": 714,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "536": {
+    "value": 10,
+    "conditionValue": 733,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "537": {
+    "value": 10,
+    "conditionValue": 743,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "538": {
+    "value": 10,
+    "conditionValue": 774,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "539": {
+    "value": 1,
+    "conditionValue": 821,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "540": {
+    "value": 1,
+    "conditionValue": 892,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "541": {
+    "value": 1,
+    "conditionValue": 928,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "542": {
+    "value": 1,
+    "conditionValue": 941,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "543": {
+    "value": 1,
+    "conditionValue": 948,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "544": {
+    "value": 1,
+    "conditionValue": 987,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "545": {
+    "value": 1,
+    "conditionValue": 1026,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "546": {
+    "value": 5,
+    "conditionValue": 645,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "547": {
+    "value": 5,
+    "conditionValue": 700,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "548": {
+    "value": 5,
+    "conditionValue": 728,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "549": {
+    "value": 5,
+    "conditionValue": 738,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "550": {
+    "value": 5,
+    "conditionValue": 743,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "551": {
+    "value": 5,
+    "conditionValue": 774,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "552": {
+    "value": 5,
+    "conditionValue": 805,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "553": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "554": {
+    "value": 1,
+    "conditionValue": 605,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "555": {
+    "value": 1,
+    "conditionValue": 610,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "556": {
+    "value": 1,
+    "conditionValue": 620,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "557": {
+    "value": 1,
+    "conditionValue": 625,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "558": {
+    "value": 1,
+    "conditionValue": 635,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "559": {
+    "value": 1,
+    "conditionValue": 645,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "567": {
+    "value": 30,
+    "conditionValue": 688,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "568": {
+    "value": 30,
+    "conditionValue": 800,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "569": {
+    "value": 30,
+    "conditionValue": 832,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "570": {
+    "value": 30,
+    "conditionValue": 844,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "571": {
+    "value": 30,
+    "conditionValue": 849,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "572": {
+    "value": 30,
+    "conditionValue": 884,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "573": {
+    "value": 30,
+    "conditionValue": 920,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "574": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "575": {
+    "value": 1,
+    "conditionValue": 605,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "576": {
+    "value": 1,
+    "conditionValue": 610,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "577": {
+    "value": 1,
+    "conditionValue": 620,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "578": {
+    "value": 1,
+    "conditionValue": 625,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "579": {
+    "value": 1,
+    "conditionValue": 635,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "580": {
+    "value": 1,
+    "conditionValue": 645,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "581": {
+    "value": 1,
+    "conditionValue": 782,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "582": {
+    "value": 1,
+    "conditionValue": 850,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "583": {
+    "value": 1,
+    "conditionValue": 884,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "584": {
+    "value": 1,
+    "conditionValue": 897,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "585": {
+    "value": 1,
+    "conditionValue": 903,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "586": {
+    "value": 1,
+    "conditionValue": 940,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "587": {
+    "value": 1,
+    "conditionValue": 978,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "588": {
+    "value": 1,
+    "conditionValue": 1006,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "589": {
+    "value": 1,
+    "conditionValue": 1116,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "600": {
+    "value": 30,
+    "conditionValue": 688,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "601": {
+    "value": 30,
+    "conditionValue": 832,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "602": {
+    "value": 30,
+    "conditionValue": 849,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "603": {
+    "value": 30,
+    "conditionValue": 884,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "604": {
+    "value": 30,
+    "conditionValue": 902,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "605": {
+    "value": 30,
+    "conditionValue": 920,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "606": {
+    "value": 30,
+    "conditionValue": 1200,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "607": {
+    "value": 30,
+    "conditionValue": 902,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "608": {
+    "value": 30,
+    "conditionValue": 1200,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "609": {
+    "value": 1,
+    "conditionValue": 821,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "610": {
+    "value": 1,
+    "conditionValue": 928,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "611": {
+    "value": 1,
+    "conditionValue": 948,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "612": {
+    "value": 1,
+    "conditionValue": 987,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "613": {
+    "value": 1,
+    "conditionValue": 1006,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "614": {
+    "value": 1,
+    "conditionValue": 1026,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "615": {
+    "value": 1,
+    "conditionValue": 1116,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "616": {
+    "value": 1,
+    "conditionValue": 1006,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "617": {
+    "value": 1,
+    "conditionValue": 1116,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "618": {
+    "value": 1,
+    "conditionValue": 948,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "619": {
+    "value": 1,
+    "conditionValue": 1116,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "621": {
+    "value": 10,
+    "conditionValue": 580,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "622": {
+    "value": 10,
+    "conditionValue": 599,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "623": {
+    "value": 10,
+    "conditionValue": 594,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "624": {
+    "value": 10,
+    "conditionValue": 620,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "625": {
+    "value": 10,
+    "conditionValue": 690,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "626": {
+    "value": 30,
+    "conditionValue": 472,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "627": {
+    "value": 30,
+    "conditionValue": 492,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "628": {
+    "value": 30,
+    "conditionValue": 483,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "629": {
+    "value": 30,
+    "conditionValue": 505,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "630": {
+    "value": 30,
+    "conditionValue": 526,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "631": {
+    "value": 1,
+    "conditionValue": 644,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "632": {
+    "value": 1,
+    "conditionValue": 654,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "633": {
+    "value": 1,
+    "conditionValue": 660,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "634": {
+    "value": 1,
+    "conditionValue": 669,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "635": {
+    "value": 1,
+    "conditionValue": 676,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "636": {
+    "value": 1,
+    "conditionValue": 580,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "637": {
+    "value": 1,
+    "conditionValue": 599,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "638": {
+    "value": 1,
+    "conditionValue": 594,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "639": {
+    "value": 1,
+    "conditionValue": 620,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "640": {
+    "value": 1,
+    "conditionValue": 690,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "641": {
+    "value": 1,
+    "conditionValue": 669,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "642": {
+    "value": 1,
+    "conditionValue": 669,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "643": {
+    "value": 1,
+    "conditionValue": 676,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "644": {
+    "value": 30,
+    "conditionValue": 505,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "645": {
+    "value": 30,
+    "conditionValue": 505,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "646": {
+    "value": 30,
+    "conditionValue": 526,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "647": {
+    "value": 1,
+    "conditionValue": 620,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "648": {
+    "value": 1,
+    "conditionValue": 620,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "649": {
+    "value": 1,
+    "conditionValue": 690,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "650": {
+    "value": 1,
+    "conditionValue": 600,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "651": {
+    "value": 1,
+    "conditionValue": 610,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "652": {
+    "value": 1,
+    "conditionValue": 625,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "653": {
+    "value": 1,
+    "conditionValue": 635,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "654": {
+    "value": 1,
+    "conditionValue": 640,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "655": {
+    "value": 1,
+    "conditionValue": 645,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "656": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "657": {
+    "value": 1,
+    "conditionValue": 640,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "658": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "659": {
+    "value": 1,
+    "conditionValue": 625,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "660": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "666": {
+    "value": 30,
+    "conditionValue": 1350,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "668": {
+    "value": 30,
+    "conditionValue": 1550,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "669": {
+    "value": 1,
+    "conditionValue": 1543,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "670": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "671": {
+    "value": 10,
+    "conditionValue": 1015,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "672": {
+    "value": 10,
+    "conditionValue": 1225,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "673": {
+    "value": 10,
+    "conditionValue": 1260,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "674": {
+    "value": 10,
+    "conditionValue": 1326,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "675": {
+    "value": 10,
+    "conditionValue": 1392,
+    "bonus": {
+      "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "676": {
+    "value": 1,
+    "conditionValue": 1294,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "677": {
+    "value": 1,
+    "conditionValue": 1517,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "678": {
+    "value": 1,
+    "conditionValue": 1562,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "679": {
+    "value": 1,
+    "conditionValue": 1606,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "680": {
+    "value": 1,
+    "conditionValue": 1649,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "681": {
+    "value": 1,
+    "conditionValue": 1691,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "682": {
+    "value": 1,
+    "conditionValue": 1733,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "683": {
+    "value": 1,
+    "conditionValue": 1859,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "684": {
+    "value": 5,
+    "conditionValue": 1015,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "685": {
+    "value": 5,
+    "conditionValue": 1190,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "686": {
+    "value": 5,
+    "conditionValue": 1225,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "687": {
+    "value": 5,
+    "conditionValue": 1260,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "688": {
+    "value": 5,
+    "conditionValue": 1293,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "689": {
+    "value": 5,
+    "conditionValue": 1326,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "690": {
+    "value": 5,
+    "conditionValue": 1359,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "691": {
+    "value": 5,
+    "conditionValue": 1458,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "692": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "693": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "694": {
+    "value": 1,
+    "conditionValue": 685,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "695": {
+    "value": 1,
+    "conditionValue": 695,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "696": {
+    "value": 1,
+    "conditionValue": 700,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "697": {
+    "value": 1,
+    "conditionValue": 705,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "698": {
+    "value": 1,
+    "conditionValue": 710,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "699": {
+    "value": 1,
+    "conditionValue": 725,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "708": {
+    "value": 30,
+    "conditionValue": 1350,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "709": {
+    "value": 30,
+    "conditionValue": 1360,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "710": {
+    "value": 30,
+    "conditionValue": 1400,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "711": {
+    "value": 30,
+    "conditionValue": 1440,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "712": {
+    "value": 30,
+    "conditionValue": 1478,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "713": {
+    "value": 30,
+    "conditionValue": 1516,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "714": {
+    "value": 30,
+    "conditionValue": 1553,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "715": {
+    "value": 30,
+    "conditionValue": 1666,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "716": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "717": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "718": {
+    "value": 1,
+    "conditionValue": 685,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "719": {
+    "value": 1,
+    "conditionValue": 695,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "720": {
+    "value": 1,
+    "conditionValue": 700,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "721": {
+    "value": 1,
+    "conditionValue": 705,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "722": {
+    "value": 1,
+    "conditionValue": 710,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "723": {
+    "value": 1,
+    "conditionValue": 725,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "724": {
+    "value": 1,
+    "conditionValue": 1233,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "725": {
+    "value": 1,
+    "conditionValue": 1445,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "726": {
+    "value": 1,
+    "conditionValue": 1488,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "727": {
+    "value": 1,
+    "conditionValue": 1530,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "728": {
+    "value": 1,
+    "conditionValue": 1571,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "729": {
+    "value": 1,
+    "conditionValue": 1611,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "730": {
+    "value": 1,
+    "conditionValue": 1651,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "731": {
+    "value": 1,
+    "conditionValue": 1771,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "732": {
+    "value": 1,
+    "conditionValue": 1775,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "733": {
+    "value": 1,
+    "conditionValue": 1859,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "734": {
+    "value": 1,
+    "conditionValue": 1947,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "746": {
+    "value": 30,
+    "conditionValue": 1400,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "747": {
+    "value": 30,
+    "conditionValue": 1440,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "748": {
+    "value": 30,
+    "conditionValue": 1516,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "749": {
+    "value": 30,
+    "conditionValue": 1591,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "750": {
+    "value": 30,
+    "conditionValue": 1666,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "751": {
+    "value": 30,
+    "conditionValue": 1840,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "752": {
+    "value": 30,
+    "conditionValue": 1591,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "753": {
+    "value": 30,
+    "conditionValue": 1666,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "754": {
+    "value": 30,
+    "conditionValue": 1840,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "755": {
+    "value": 1,
+    "conditionValue": 1294,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "756": {
+    "value": 1,
+    "conditionValue": 1562,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "757": {
+    "value": 1,
+    "conditionValue": 1606,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "758": {
+    "value": 1,
+    "conditionValue": 1691,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "759": {
+    "value": 1,
+    "conditionValue": 1775,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "760": {
+    "value": 1,
+    "conditionValue": 1859,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "761": {
+    "value": 1,
+    "conditionValue": 1947,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "762": {
+    "value": 1,
+    "conditionValue": 1775,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "763": {
+    "value": 1,
+    "conditionValue": 1859,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "764": {
+    "value": 1,
+    "conditionValue": 1947,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "765": {
+    "value": 1,
+    "conditionValue": 1691,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "766": {
+    "value": 1,
+    "conditionValue": 1947,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "767": {
+    "value": 1,
+    "conditionValue": 680,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "768": {
+    "value": 1,
+    "conditionValue": 685,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "769": {
+    "value": 1,
+    "conditionValue": 695,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "770": {
+    "value": 1,
+    "conditionValue": 705,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "771": {
+    "value": 1,
+    "conditionValue": 715,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "772": {
+    "value": 1,
+    "conditionValue": 725,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "773": {
+    "value": 1,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "774": {
+    "value": 1,
+    "conditionValue": 715,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "775": {
+    "value": 1,
+    "conditionValue": 725,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "776": {
+    "value": 1,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "777": {
+    "value": 1,
+    "conditionValue": 705,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "778": {
+    "value": 1,
+    "conditionValue": 740,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "779": {
+    "value": 10,
+    "conditionValue": 987,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "780": {
+    "value": 10,
+    "conditionValue": 1034,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "781": {
+    "value": 10,
+    "conditionValue": 1061,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "782": {
+    "value": 10,
+    "conditionValue": 1113,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "783": {
+    "value": 10,
+    "conditionValue": 1166,
+    "bonus": {
+      "zh": "获得率＋<Value>IntegerParameter(1)</Value>％"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "784": {
+    "value": 30,
+    "conditionValue": 793,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "785": {
+    "value": 30,
+    "conditionValue": 831,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "786": {
+    "value": 30,
+    "conditionValue": 852,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "787": {
+    "value": 30,
+    "conditionValue": 895,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "788": {
+    "value": 30,
+    "conditionValue": 937,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "789": {
+    "value": 1,
+    "conditionValue": 710,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "790": {
+    "value": 1,
+    "conditionValue": 710,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "791": {
+    "value": 1,
+    "conditionValue": 710,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "792": {
+    "value": 1,
+    "conditionValue": 720,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "793": {
+    "value": 1,
+    "conditionValue": 730,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "794": {
+    "value": 1,
+    "conditionValue": 987,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "795": {
+    "value": 1,
+    "conditionValue": 1034,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "796": {
+    "value": 1,
+    "conditionValue": 1061,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "797": {
+    "value": 1,
+    "conditionValue": 1113,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "798": {
+    "value": 1,
+    "conditionValue": 1166,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "799": {
+    "value": 1,
+    "conditionValue": 710,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "800": {
+    "value": 1,
+    "conditionValue": 710,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "801": {
+    "value": 1,
+    "conditionValue": 710,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "802": {
+    "value": 30,
+    "conditionValue": 793,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "803": {
+    "value": 30,
+    "conditionValue": 810,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "804": {
+    "value": 30,
+    "conditionValue": 831,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "805": {
+    "value": 1,
+    "conditionValue": 987,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "806": {
+    "value": 1,
+    "conditionValue": 1008,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "807": {
+    "value": 1,
+    "conditionValue": 1034,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "808": {
+    "value": 1,
+    "conditionValue": 720,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "809": {
+    "value": 1,
+    "conditionValue": 730,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "810": {
+    "value": 1,
+    "conditionValue": 730,
+    "bonus": {
+      "zh": "采集次数＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "811": {
+    "value": 30,
+    "conditionValue": 895,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "812": {
+    "value": 30,
+    "conditionValue": 916,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "813": {
+    "value": 30,
+    "conditionValue": 937,
+    "bonus": {
+      "zh": "优质获得率＋<Value>IntegerParameter(1)</Value>％（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "814": {
+    "value": 1,
+    "conditionValue": 1113,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "815": {
+    "value": 1,
+    "conditionValue": 1140,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "816": {
+    "value": 1,
+    "conditionValue": 1166,
+    "bonus": {
+      "zh": "个数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  }
+}
